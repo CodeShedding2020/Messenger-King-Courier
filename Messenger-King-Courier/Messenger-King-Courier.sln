@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messenger-King-Courier", "Messenger-King-Courier\Messenger-King-Courier.csproj", "{C0244679-A5FB-4627-8A5C-9A1549EA3262}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messenger-King-Courier.Tests", "Messenger-King-Courier.Tests\Messenger-King-Courier.Tests.csproj", "{7C52E5E2-7159-4B29-B8D0-61A64D3B36F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0244679-A5FB-4627-8A5C-9A1549EA3262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0244679-A5FB-4627-8A5C-9A1549EA3262}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0244679-A5FB-4627-8A5C-9A1549EA3262}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0244679-A5FB-4627-8A5C-9A1549EA3262}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C52E5E2-7159-4B29-B8D0-61A64D3B36F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C52E5E2-7159-4B29-B8D0-61A64D3B36F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C52E5E2-7159-4B29-B8D0-61A64D3B36F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C52E5E2-7159-4B29-B8D0-61A64D3B36F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06A32DF4-2E29-4612-897B-CA87CF069F97}
+	EndGlobalSection
+EndGlobal
