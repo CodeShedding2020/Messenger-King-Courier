@@ -10,7 +10,7 @@ namespace Messenger_King_Courier.Models.AppModels
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [DisplayName("Bank Category ID")]
-        public string BankCat_ID { get; set; }
+        public int BankCat_ID { get; set; }
 
         [Required(ErrorMessage = "Bank name is required")]
         [DisplayName("Bank name")]

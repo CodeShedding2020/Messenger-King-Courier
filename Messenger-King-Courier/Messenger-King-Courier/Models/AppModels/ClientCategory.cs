@@ -9,7 +9,7 @@ namespace Messenger_King_Courier.Models.AppModels
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [DisplayName("Client Category ID")]
-        public string ClientCat_ID { get; set; }
+        public int ClientCat_ID { get; set; }
 
         [Required(ErrorMessage = "Category type is required")]
         [DisplayName("Client Type")]
