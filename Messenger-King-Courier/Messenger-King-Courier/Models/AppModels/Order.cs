@@ -19,6 +19,12 @@ namespace Messenger_King_Courier.Models.AppModels
         [DataType(DataType.Date)]
         public DateTime Order_DateTime { get; set; }
 
+        [Required(ErrorMessage = "Oder Delivery date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayName("Pickup Date")]
+        public DateTime Order_DeliveryDate { get; set; }
+
         public int Book_ID { get; set; }
         public virtual Booking Bookings { get; set; }
 
@@ -29,6 +35,8 @@ namespace Messenger_King_Courier.Models.AppModels
         public virtual OrderCategory OrderCategory { get; set; }
 
         public virtual List<Invoice> Invoices { get; set; }
+
+        public virtual List<Tracking> Trackings { get; set; }
 
     }
 }

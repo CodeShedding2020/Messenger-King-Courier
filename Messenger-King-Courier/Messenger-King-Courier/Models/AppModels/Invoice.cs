@@ -26,13 +26,17 @@ namespace Messenger_King_Courier.Models.AppModels
         public DateTime Invoice_DueDate { get; set; }
 
         [DisplayName("Balance Due")]
-        public DateTime Invoice_BalanceDue { get; set; }
+        public DateTime Invoice_AmountDue { get; set; }
 
         [DisplayName("VAT Amount")]
         public DateTime Invoice_VAT { get; set; }
 
         public int Order_ID { get; set; }
         public virtual Order Order { get; set; }
+        public int Month_ID{ get; set; }
+        public virtual Month  Month{ get; set; }
 
+        public int Bank_ID { get; set; }
+        public virtual Bank Bank { get; set; }
     }
 }

@@ -22,6 +22,9 @@ namespace Messenger_King_Courier.Models.AppModels
         [DisplayName("Delivery address")]
         public string Quote_DeliveryAddress { get; set; }
 
+        [DisplayName("Distance")]
+        public float Quote_Distance { get; set; }
+
         [Required(ErrorMessage = "Item description is required")]
         [DisplayName("Item description")]
         public string Quote_Description { get; set; }
