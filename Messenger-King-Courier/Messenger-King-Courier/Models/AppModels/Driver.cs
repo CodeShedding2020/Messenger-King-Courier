@@ -41,6 +41,8 @@ namespace Messenger_King_Courier.Models.AppModels
                   ErrorMessage = "Entered Contact number format is not valid.")]
         public string Driver_Contact { get; set; }
         public virtual List<Document> Documents { get; set;}
-        
+
+        public virtual List<Bank> Banks { get; set; }
+
     }
 }
