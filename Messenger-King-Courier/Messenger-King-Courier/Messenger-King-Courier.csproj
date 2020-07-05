@@ -237,6 +237,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountCategoriesController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClientCategoriesController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
@@ -371,6 +372,11 @@
     <Content Include="Views\ClientCategories\Details.cshtml" />
     <Content Include="Views\ClientCategories\Edit.cshtml" />
     <Content Include="Views\ClientCategories\Index.cshtml" />
+    <Content Include="Views\AccountCategories\Create.cshtml" />
+    <Content Include="Views\AccountCategories\Delete.cshtml" />
+    <Content Include="Views\AccountCategories\Details.cshtml" />
+    <Content Include="Views\AccountCategories\Edit.cshtml" />
+    <Content Include="Views\AccountCategories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
