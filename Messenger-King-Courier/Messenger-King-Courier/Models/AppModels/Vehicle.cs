@@ -11,7 +11,7 @@ namespace Messenger_King_Courier.Models.AppModels
     public class Vehicle
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Vehicle_ID { get; set; }//(VIN)
         
         [Required(ErrorMessage = "Vehicle make is reqiured")]
