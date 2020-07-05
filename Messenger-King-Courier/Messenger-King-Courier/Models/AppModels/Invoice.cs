@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.Web;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
+using System.Data.Entity;
+using System.Web.Mvc;
+using System;
+using Newtonsoft.Json;
 
-namespace Messenger_King_Courier.Models.Invoice
+namespace Messenger_King_Courier.Models.AppModels
 {
     public class Invoice
     {
@@ -14,12 +15,12 @@ namespace Messenger_King_Courier.Models.Invoice
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [DisplayName("Invoice ID")]
         public int Invoice_ID { get; set; }
-
+       
         [DisplayName("Invoice Date")]
         public DateTime Invoice_Date { get; set; }
 
         [DisplayName("Bill Amount")]
-        public double Invoice_Amount { get; set; }
+        public decimal Invoice_Amount { get; set; }
 
         [DisplayName("Due Date")]
         public DateTime Invoice_DueDate { get; set; }
@@ -30,8 +31,8 @@ namespace Messenger_King_Courier.Models.Invoice
         [DisplayName("VAT Amount")]
         public DateTime Invoice_VAT { get; set; }
 
-        public virtual ICollection<Order> Orders { get; set; }
-
+        public int Order_ID { get; set; }
+        public virtual Order Order { get; set; }
 
     }
 }
