@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Messenger_King_Courier.Models.AppModels.Tracking>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Order.Order_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Track_Message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrackingCat_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrackingStat_ID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order.Order_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Track_Message)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrackingCat_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrackingStat_ID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Track_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Track_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Track_ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,88 @@
+﻿@model Messenger_King_Courier.Models.AppModels.Invoice
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Invoice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bank.Bank_Account_Holder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bank.Bank_Account_Holder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Month.Book_RecipientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Month.Book_RecipientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.Order_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.Order_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Invoice_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice_Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Invoice_Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice_DueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Invoice_DueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice_AmountDue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Invoice_AmountDue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice_VAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Invoice_VAT)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
