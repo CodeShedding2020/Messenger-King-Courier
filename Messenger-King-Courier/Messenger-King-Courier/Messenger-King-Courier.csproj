@@ -240,13 +240,17 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClientCategoriesController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
+    <Compile Include="Controllers\DriversController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InspectionCategoriesController.cs" />
+    <Compile Include="Controllers\InspectionsController.cs" />
     <Compile Include="Controllers\InvoicesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrderCategoriesController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\TrackingCategoriesController.cs" />
     <Compile Include="Controllers\TrackingsController.cs" />
+    <Compile Include="Controllers\VehiclesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -375,6 +379,26 @@
     <Content Include="Views\ClientCategories\Details.cshtml" />
     <Content Include="Views\ClientCategories\Edit.cshtml" />
     <Content Include="Views\ClientCategories\Index.cshtml" />
+    <Content Include="Views\Vehicles\Create.cshtml" />
+    <Content Include="Views\Vehicles\Delete.cshtml" />
+    <Content Include="Views\Vehicles\Details.cshtml" />
+    <Content Include="Views\Vehicles\Edit.cshtml" />
+    <Content Include="Views\Vehicles\Index.cshtml" />
+    <Content Include="Views\Drivers\Create.cshtml" />
+    <Content Include="Views\Drivers\Delete.cshtml" />
+    <Content Include="Views\Drivers\Details.cshtml" />
+    <Content Include="Views\Drivers\Edit.cshtml" />
+    <Content Include="Views\Drivers\Index.cshtml" />
+    <Content Include="Views\Inspections\Create.cshtml" />
+    <Content Include="Views\Inspections\Delete.cshtml" />
+    <Content Include="Views\Inspections\Details.cshtml" />
+    <Content Include="Views\Inspections\Edit.cshtml" />
+    <Content Include="Views\Inspections\Index.cshtml" />
+    <Content Include="Views\InspectionCategories\Create.cshtml" />
+    <Content Include="Views\InspectionCategories\Delete.cshtml" />
+    <Content Include="Views\InspectionCategories\Details.cshtml" />
+    <Content Include="Views\InspectionCategories\Edit.cshtml" />
+    <Content Include="Views\InspectionCategories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

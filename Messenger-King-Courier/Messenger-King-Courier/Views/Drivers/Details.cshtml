@@ -1,0 +1,58 @@
+﻿@model Messenger_King_Courier.Models.AppModels.Driver
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Driver</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Driver_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Driver_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Driver_Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Driver_Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Driver_CellNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Driver_CellNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Driver_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Driver_Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Driver_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Driver_Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Driver_IDNo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
