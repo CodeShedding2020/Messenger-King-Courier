@@ -1,8 +1,10 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Messenger_King_Courier.Models.AppModels;
 
 namespace Messenger_King_Courier.Models
 {
@@ -24,6 +26,19 @@ namespace Messenger_King_Courier.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+            public DbSet<Booking> Bookings {get;set;}
+            public DbSet<Client> Clients { get; set; }
+            public DbSet<Document> Documents { get; set; }
+            public DbSet<Driver> Drivers { get; set; }  
+            public DbSet<Inspection> Inspections { get; set; }
+            public DbSet<InspectionCategory> InspectionCategories { get; set; }
+            public DbSet<Invoice> Invoices { get; set; }
+            public DbSet<Order> Orders{ get; set; }
+            public DbSet<OrderCategory> OrderCategories { get; set; }
+            public DbSet<Quote> Quotes { get; set; }
+            public DbSet<Rate> Rates { get; set; }
+            public DbSet<Vehicle> Vehicles { get; set; }
 
         public static ApplicationDbContext Create()
         {

@@ -1,25 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.Web;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
+using System.Data.Entity;
+using System.Web.Mvc;
+using System;
 
-namespace Messenger_King_Courier.Models.Booking
+namespace Messenger_King_Courier.Models.AppModels
 {
-    public class BookingEntity
+    public class Booking
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Book_ID { get; set; }
+        public int Book_ID { get; set; }
 
         [Required(ErrorMessage = "Please select pickup date")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [DisplayName("Pickup Date")]
         public DateTime Book_PickupDate { get; set; }
+
         [Required(ErrorMessage = "Please select delivery date")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [DisplayName("Delivery Date")]
         public DateTime Book_DeliveryDate { get; set; }
 
@@ -32,10 +35,11 @@ namespace Messenger_King_Courier.Models.Booking
         public string Book_RecipientSurname { get; set; }
 
 
-
-        [StringLength(15, MinimumLength = 10, ErrorMessage = "Please enter a valid phone number")]
-        [Required(ErrorMessage = "The recipient's contact number is required")]
-        [DisplayName("Recipient's Contact Number")]
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Contact Number")]
+        [Required(ErrorMessage = "Contact Number Required!")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
+                  ErrorMessage = "Entered Contact number format is not valid.")]
         public string Book_RecipientNumber { get; set; }
 
         [StringLength(250, MinimumLength = 2, ErrorMessage = "The Delivery Note should be between 2 - 250 Characters")]
@@ -45,14 +49,9 @@ namespace Messenger_King_Courier.Models.Booking
         [DisplayName("Total Cost")]
         public double Book_TotalCost { get; set; }
 
-
-
-
-
-
-
-
-
+        public int Quote_ID { get; set; }
+        public virtual Quote Quote { get; set; }
+        
 
     }
 }
