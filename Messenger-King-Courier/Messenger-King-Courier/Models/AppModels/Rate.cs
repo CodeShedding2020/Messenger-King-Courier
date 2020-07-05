@@ -9,9 +9,9 @@ namespace Messenger_King_Courier.Models.AppModels
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Vehicle_ID { get; set; }
+        public int Rate_ID { get; set; }
 
-        [Required(ErrorMessage = "Item length is required")]
+        [Required(ErrorMessage = "Service is required")]
         [DisplayName("Sevice cost")]
         public decimal Base_Cost { get; set; }
 
