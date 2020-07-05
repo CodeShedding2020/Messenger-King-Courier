@@ -26,18 +26,18 @@ namespace Messenger_King_Courier.Models.AppModels
         [DisplayName("Delivery Date")]
         public DateTime Book_DeliveryDate { get; set; }
 
-        [Required(ErrorMessage = "Name is required")]
+        [Required(ErrorMessage = " Recipient name is required")]
         [DisplayName("Recipient Name")]
         public string Book_RecipientName { get; set; }
 
-        [Required(ErrorMessage = "Name is required")]
+        [Required(ErrorMessage = "Recipient surname is required")]
         [DisplayName("Recipient Surname")]
         public string Book_RecipientSurname { get; set; }
 
 
         [DataType(DataType.PhoneNumber)]
         [Display(Name = "Contact Number")]
-        [Required(ErrorMessage = "Contact Number Required!")]
+        [Required(ErrorMessage = "Recipient contact number is required!")]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
                   ErrorMessage = "Entered Contact number format is not valid.")]
         public string Book_RecipientNumber { get; set; }

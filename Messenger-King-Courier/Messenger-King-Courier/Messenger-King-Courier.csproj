@@ -249,6 +249,7 @@
     <Compile Include="Models\AppModels\BankCategory.cs" />
     <Compile Include="Models\AppModels\Booking.cs" />
     <Compile Include="Models\AppModels\Client.cs" />
+    <Compile Include="Models\AppModels\ClientCategory.cs" />
     <Compile Include="Models\AppModels\Document.cs" />
     <Compile Include="Models\AppModels\Driver.cs" />
     <Compile Include="Models\AppModels\Inspection.cs" />
