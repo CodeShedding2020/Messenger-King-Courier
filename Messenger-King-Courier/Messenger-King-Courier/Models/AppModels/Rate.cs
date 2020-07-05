@@ -11,7 +11,7 @@ namespace Messenger_King_Courier.Models.AppModels
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Rate_ID { get; set; }
 
-        [Required(ErrorMessage = "Service is required")]
+        [Required(ErrorMessage = "Service cost is required")]
         [DisplayName("Sevice cost")]
         public decimal Base_Cost { get; set; }
 
