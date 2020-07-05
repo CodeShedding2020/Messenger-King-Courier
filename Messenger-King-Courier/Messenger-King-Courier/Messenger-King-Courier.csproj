@@ -238,6 +238,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClientCategoriesController.cs" />
+    <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvoicesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -248,6 +250,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007051817301_Msenger-King-Courier.cs" />
+    <Compile Include="Migrations\202007051817301_Msenger-King-Courier.Designer.cs">
+      <DependentUpon>202007051817301_Msenger-King-Courier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppModels\AccountCategory.cs" />
     <Compile Include="Models\AppModels\Bank.cs" />
@@ -354,6 +361,16 @@
     <Content Include="Views\OrderCategories\Details.cshtml" />
     <Content Include="Views\OrderCategories\Edit.cshtml" />
     <Content Include="Views\OrderCategories\Index.cshtml" />
+    <Content Include="Views\Clients\Create.cshtml" />
+    <Content Include="Views\Clients\Delete.cshtml" />
+    <Content Include="Views\Clients\Details.cshtml" />
+    <Content Include="Views\Clients\Edit.cshtml" />
+    <Content Include="Views\Clients\Index.cshtml" />
+    <Content Include="Views\ClientCategories\Create.cshtml" />
+    <Content Include="Views\ClientCategories\Delete.cshtml" />
+    <Content Include="Views\ClientCategories\Details.cshtml" />
+    <Content Include="Views\ClientCategories\Edit.cshtml" />
+    <Content Include="Views\ClientCategories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -370,6 +387,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202007051817301_Msenger-King-Courier.resx">
+      <DependentUpon>202007051817301_Msenger-King-Courier.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
