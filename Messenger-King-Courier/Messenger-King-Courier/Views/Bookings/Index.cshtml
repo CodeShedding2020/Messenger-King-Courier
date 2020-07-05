@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Messenger_King_Courier.Models.AppModels.Booking>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Quote.Quote_PickupAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Book_PickupDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Book_DeliveryDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Book_RecipientName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Book_RecipientSurname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Book_RecipientNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Book_DeliveryNote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Book_TotalCost)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quote.Quote_PickupAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Book_PickupDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Book_DeliveryDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Book_RecipientName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Book_RecipientSurname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Book_RecipientNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Book_DeliveryNote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Book_TotalCost)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Book_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Book_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Book_ID })
+        </td>
+    </tr>
+}
+
+</table>
