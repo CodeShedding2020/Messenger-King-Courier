@@ -1,0 +1,50 @@
+﻿@model Messenger_King_Courier.Models.AppModels.Tracking
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tracking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.Order_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.Order_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Track_Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Track_Message)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrackingCat_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrackingCat_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrackingStat_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrackingStat_ID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Track_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
