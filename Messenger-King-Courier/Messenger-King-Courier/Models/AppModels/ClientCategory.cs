@@ -7,7 +7,7 @@ namespace Messenger_King_Courier.Models.AppModels
     public class ClientCategory
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [DisplayName("Client Category ID")]
         public string ClientCat_ID { get; set; }
 
