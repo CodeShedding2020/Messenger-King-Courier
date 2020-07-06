@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Messenger_King_Courier.Models.AppModels.Vehicle>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Driver.Driver_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vehicle_Make)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vehicle_Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vehicle_Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vehicle_RegNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vehicle_Colour)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Driver.Driver_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehicle_Make)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehicle_Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehicle_Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehicle_RegNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehicle_Colour)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Vehicle_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Vehicle_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Vehicle_ID })
+        </td>
+    </tr>
+}
+
+</table>

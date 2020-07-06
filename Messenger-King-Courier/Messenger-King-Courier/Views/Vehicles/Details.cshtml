@@ -1,0 +1,66 @@
+﻿@model Messenger_King_Courier.Models.AppModels.Vehicle
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vehicle</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Driver.Driver_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Driver.Driver_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle_Make)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle_Make)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle_Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle_Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle_Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle_Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle_RegNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle_RegNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle_Colour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle_Colour)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Vehicle_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
