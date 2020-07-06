@@ -39,7 +39,7 @@ namespace Messenger_King_Courier.Models.AppModels
 
 
         public virtual List<Document> Documents { get; set;}
-
+        public virtual List<Vehicle> Vehicles { get; set; }
         public virtual List<Bank> Banks { get; set; }
 
     }

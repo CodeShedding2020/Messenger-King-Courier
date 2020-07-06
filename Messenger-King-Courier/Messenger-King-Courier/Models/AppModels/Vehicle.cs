@@ -12,7 +12,9 @@ namespace Messenger_King_Courier.Models.AppModels
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Vehicle_ID { get; set; }//(VIN)
+        [Required(ErrorMessage = "Vehicle Identification Number is reqiured")]
+        [DisplayName("VIN")]
+        public string Vehicle_ID { get; set; }//(VIN)
         
         [Required(ErrorMessage = "Vehicle make is reqiured")]
         [DisplayName("Make")]
@@ -26,15 +28,16 @@ namespace Messenger_King_Courier.Models.AppModels
         [DisplayName("Year")]
         public DateTime Vehicle_Year { get; set; }
 
-        [Required(ErrorMessage = "Vehicle registration number is required")]
-        [DisplayName("Registration number")]
+        [Required(ErrorMessage = "Number plate is required")]
+        [DisplayName("Number plate")]
         public string Vehicle_RegNo { get; set; }
 
         [Required(ErrorMessage = "Vehicle colour is required")]
         [DisplayName("Colour")]
         public string Vehicle_Colour { get; set; }
-        public int Driver_ID { get; set; }
+        public string Driver_IDNo { get; set; }
         public virtual Driver Driver { get; set; }
        
+        public virtual List<Inspection> Inspections { get; set; }
     }
 }

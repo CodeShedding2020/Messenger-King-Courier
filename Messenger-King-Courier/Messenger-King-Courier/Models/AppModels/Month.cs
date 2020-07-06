@@ -14,7 +14,7 @@ namespace Messenger_King_Courier.Models.AppModels
 
         [Required(ErrorMessage = "Month name is required")]
         [DisplayName("Month")]
-        public string Book_RecipientName { get; set; }
+        public string Month_Name { get; set; }
         
         public virtual List<Invoice> Invoices { get; set;}
     }

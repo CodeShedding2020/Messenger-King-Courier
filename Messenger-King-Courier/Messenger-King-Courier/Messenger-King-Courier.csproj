@@ -237,17 +237,8 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountCategoriesController.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ClientCategoriesController.cs" />
-    <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\InvoicesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\OrderCategoriesController.cs" />
-    <Compile Include="Controllers\OrdersController.cs" />
-    <Compile Include="Controllers\TrackingCategoriesController.cs" />
-    <Compile Include="Controllers\TrackingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -317,18 +308,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
@@ -337,46 +316,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Orders\Create.cshtml" />
-    <Content Include="Views\Orders\Delete.cshtml" />
-    <Content Include="Views\Orders\Details.cshtml" />
-    <Content Include="Views\Orders\Edit.cshtml" />
-    <Content Include="Views\Orders\Index.cshtml" />
-    <Content Include="Views\Trackings\Create.cshtml" />
-    <Content Include="Views\Trackings\Delete.cshtml" />
-    <Content Include="Views\Trackings\Details.cshtml" />
-    <Content Include="Views\Trackings\Edit.cshtml" />
-    <Content Include="Views\Trackings\Index.cshtml" />
-    <Content Include="Views\TrackingCategories\Create.cshtml" />
-    <Content Include="Views\TrackingCategories\Delete.cshtml" />
-    <Content Include="Views\TrackingCategories\Details.cshtml" />
-    <Content Include="Views\TrackingCategories\Edit.cshtml" />
-    <Content Include="Views\TrackingCategories\Index.cshtml" />
-    <Content Include="Views\Invoices\Create.cshtml" />
-    <Content Include="Views\Invoices\Delete.cshtml" />
-    <Content Include="Views\Invoices\Details.cshtml" />
-    <Content Include="Views\Invoices\Edit.cshtml" />
-    <Content Include="Views\Invoices\Index.cshtml" />
-    <Content Include="Views\OrderCategories\Create.cshtml" />
-    <Content Include="Views\OrderCategories\Delete.cshtml" />
-    <Content Include="Views\OrderCategories\Details.cshtml" />
-    <Content Include="Views\OrderCategories\Edit.cshtml" />
-    <Content Include="Views\OrderCategories\Index.cshtml" />
-    <Content Include="Views\Clients\Create.cshtml" />
-    <Content Include="Views\Clients\Delete.cshtml" />
-    <Content Include="Views\Clients\Details.cshtml" />
-    <Content Include="Views\Clients\Edit.cshtml" />
-    <Content Include="Views\Clients\Index.cshtml" />
-    <Content Include="Views\ClientCategories\Create.cshtml" />
-    <Content Include="Views\ClientCategories\Delete.cshtml" />
-    <Content Include="Views\ClientCategories\Details.cshtml" />
-    <Content Include="Views\ClientCategories\Edit.cshtml" />
-    <Content Include="Views\ClientCategories\Index.cshtml" />
-    <Content Include="Views\AccountCategories\Create.cshtml" />
-    <Content Include="Views\AccountCategories\Delete.cshtml" />
-    <Content Include="Views\AccountCategories\Details.cshtml" />
-    <Content Include="Views\AccountCategories\Edit.cshtml" />
-    <Content Include="Views\AccountCategories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -16,19 +16,19 @@ namespace Messenger_King_Courier.Models.AppModels
         [DisplayName("Invoice ID")]
         public int Invoice_ID { get; set; }
        
-        [DisplayName("Invoice Date")]
+        [DisplayName("Invoice date")]
         public DateTime Invoice_Date { get; set; }
 
-        [DisplayName("Bill Amount")]
+        [DisplayName("Total amount")]
         public decimal Invoice_Amount { get; set; }
 
-        [DisplayName("Due Date")]
+        [DisplayName("Due date")]
         public DateTime Invoice_DueDate { get; set; }
 
-        [DisplayName("Balance Due")]
+        [DisplayName("Total amount due")]
         public DateTime Invoice_AmountDue { get; set; }
 
-        [DisplayName("VAT Amount")]
+        [DisplayName("VAT")]
         public DateTime Invoice_VAT { get; set; }
 
         public int Order_ID { get; set; }

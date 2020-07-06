@@ -19,10 +19,10 @@ namespace Messenger_King_Courier.Models.AppModels
         [DataType(DataType.Date)]
         public DateTime Order_DateTime { get; set; }
 
-        [Required(ErrorMessage = "Oder Delivery date")]
+        [Required(ErrorMessage = "Oder delivery date is required")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        [DisplayName("Pickup Date")]
+        [DisplayName("Delivery Date")]
         public DateTime Order_DeliveryDate { get; set; }
 
         public int Book_ID { get; set; }
