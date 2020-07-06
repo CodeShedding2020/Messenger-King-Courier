@@ -1,0 +1,26 @@
+﻿@model Messenger_King_Courier.Models.AppModels.ClientCategory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ClientCategory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientCat_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientCat_Type)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ClientCat_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
