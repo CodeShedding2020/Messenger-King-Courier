@@ -1,0 +1,50 @@
+﻿@model Messenger_King_Courier.Models.AppModels.Rate
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Rate</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Base_Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Base_Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rate_PerCM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rate_PerCM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rate_PerKG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rate_PerKG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rate_PerKM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rate_PerKM)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Rate_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,122 @@
+﻿@model Messenger_King_Courier.Models.AppModels.Quote
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Quote</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Client.Client_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client.Client_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rate.Rate_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rate.Rate_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_PickupAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_PickupAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_DeliveryAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_DeliveryAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_Distance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_Distance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item_Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item_Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_length)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_length)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_Height)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_Height)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_Width)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_Width)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_Weight)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Quote_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

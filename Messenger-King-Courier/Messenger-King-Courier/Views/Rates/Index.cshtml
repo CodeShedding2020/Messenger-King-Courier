@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Messenger_King_Courier.Models.AppModels.Rate>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Base_Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rate_PerCM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rate_PerKG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rate_PerKM)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Base_Cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rate_PerCM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rate_PerKG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rate_PerKM)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Rate_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Rate_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Rate_ID })
+        </td>
+    </tr>
+}
+
+</table>
