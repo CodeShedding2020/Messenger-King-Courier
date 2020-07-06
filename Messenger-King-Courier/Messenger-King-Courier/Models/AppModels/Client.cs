@@ -43,7 +43,7 @@ namespace Messenger_King_Courier.Models.AppModels
           ErrorMessage = "Entered tellephone number format is not valid.")]
         public string Client_Tellnum { get; set; }
 
-        public string ClientCat_ID { get; set; }
+        public int ClientCat_ID { get; set; }
         public virtual ClientCategory ClientCategory { get; set; }
 
     }

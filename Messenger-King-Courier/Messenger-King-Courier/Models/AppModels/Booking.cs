@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data.Entity;
 using System.Web.Mvc;
 using System;
+using System.Collections.Generic;
 
 namespace Messenger_King_Courier.Models.AppModels
 {
@@ -14,13 +15,13 @@ namespace Messenger_King_Courier.Models.AppModels
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Book_ID { get; set; }
 
-        [Required(ErrorMessage = "Please select pickup date")]
+        [Required(ErrorMessage = "Pickup date is required")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [DisplayName("Pickup Date")]
         public DateTime Book_PickupDate { get; set; }
 
-        [Required(ErrorMessage = "Please select delivery date")]
+        [Required(ErrorMessage = "Delivery date is required")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [DisplayName("Delivery Date")]
@@ -52,6 +53,7 @@ namespace Messenger_King_Courier.Models.AppModels
         public int Quote_ID { get; set; }
         public virtual Quote Quote { get; set; }
         
+        public virtual List<Order> Order { get; set; }
 
     }
 }

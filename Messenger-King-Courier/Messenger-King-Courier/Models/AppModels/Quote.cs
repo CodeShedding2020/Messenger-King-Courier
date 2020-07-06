@@ -42,8 +42,8 @@ namespace Messenger_King_Courier.Models.AppModels
         public int Quote_length { get; set; }
 
 
-        [Required(ErrorMessage = "Item length is required")]
-        [DisplayName("Item length")]
+        [Required(ErrorMessage = "Item height is required")]
+        [DisplayName("Item height")]
         public int Quote_Height { get; set; }
 
 
@@ -57,9 +57,9 @@ namespace Messenger_King_Courier.Models.AppModels
         [Required(ErrorMessage = "Item weight is required")]
         [DisplayName("Item weight")]
         public int Quote_Weight { get; set; }
-        
 
-        public int Client_ID { get; set; }
+
+        public string CLient_IDNo { get; set; }
         public virtual Client Client { get; set; }
 
         public int Rate_ID { get; set; }

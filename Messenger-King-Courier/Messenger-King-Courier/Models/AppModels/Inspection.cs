@@ -14,6 +14,7 @@ namespace Messenger_King_Courier.Models.AppModels
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Inspection_ID { get; set; }
 
+        [DisplayName("Vehicle condition")]
         public string Condition { get; set; }
 
         [Required(ErrorMessage = "Inspection date is required")]
@@ -22,7 +23,7 @@ namespace Messenger_King_Courier.Models.AppModels
         [DisplayName("Inspection date")]
         public DateTime Inspection_Date { get; set; }
 
-        public int Vehicle_ID { get; set; }
+        public string Vehicle_ID { get; set; }
         public virtual Vehicle Vehicle { get; set; }
 
         public int InspectCat_ID { get; set; }

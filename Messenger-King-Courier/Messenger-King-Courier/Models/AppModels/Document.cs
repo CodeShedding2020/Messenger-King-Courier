@@ -19,11 +19,11 @@ namespace Messenger_King_Courier.Models.AppModels
         [DisplayName("Bank statement")]
         public byte[] Document_Statement { get; set; }
 
-     
-        public int Client_ID { get; set; }
+
+        public string CLient_IDNo { get; set; }
         public virtual Client Client { get; set; }
 
-        public int Driver_ID { get; set; }
+        public string Driver_IDNo { get; set; }
         public virtual Driver Driver { get; set; }
        
 
