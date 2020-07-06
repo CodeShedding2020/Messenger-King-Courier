@@ -242,6 +242,10 @@
     <Compile Include="Controllers\InvoicesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MonthsController.cs" />
+    <Compile Include="Controllers\OrderCategoriesController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\TrackingCategoriesController.cs" />
+    <Compile Include="Controllers\TrackingsController.cs" />
     <Compile Include="Controllers\VehiclesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -347,6 +351,26 @@
     <Content Include="Views\Months\Details.cshtml" />
     <Content Include="Views\Months\Edit.cshtml" />
     <Content Include="Views\Months\Index.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\OrderCategories\Create.cshtml" />
+    <Content Include="Views\OrderCategories\Delete.cshtml" />
+    <Content Include="Views\OrderCategories\Details.cshtml" />
+    <Content Include="Views\OrderCategories\Edit.cshtml" />
+    <Content Include="Views\OrderCategories\Index.cshtml" />
+    <Content Include="Views\Trackings\Create.cshtml" />
+    <Content Include="Views\Trackings\Delete.cshtml" />
+    <Content Include="Views\Trackings\Details.cshtml" />
+    <Content Include="Views\Trackings\Edit.cshtml" />
+    <Content Include="Views\Trackings\Index.cshtml" />
+    <Content Include="Views\TrackingCategories\Create.cshtml" />
+    <Content Include="Views\TrackingCategories\Delete.cshtml" />
+    <Content Include="Views\TrackingCategories\Details.cshtml" />
+    <Content Include="Views\TrackingCategories\Edit.cshtml" />
+    <Content Include="Views\TrackingCategories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

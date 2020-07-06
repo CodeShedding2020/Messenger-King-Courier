@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Messenger_King_Courier.Models.AppModels.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Bookings.Book_RecipientName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Inspection.Condition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderCategory.OrderCat_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_DateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_DeliveryDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bookings.Book_RecipientName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Inspection.Condition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderCategory.OrderCat_Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order_DateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order_DeliveryDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Order_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Order_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Order_ID })
+        </td>
+    </tr>
+}
+
+</table>
