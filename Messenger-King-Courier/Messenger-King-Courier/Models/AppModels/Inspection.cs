@@ -28,6 +28,7 @@ namespace Messenger_King_Courier.Models.AppModels
 
         public int InspectCat_ID { get; set; }
         public virtual InspectionCategory InspectionCategory   { get; set; }
+        
        
 
     }
