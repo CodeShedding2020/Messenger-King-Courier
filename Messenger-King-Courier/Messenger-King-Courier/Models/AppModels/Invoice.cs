@@ -23,7 +23,7 @@ namespace Messenger_King_Courier.Models.AppModels
         public decimal Invoice_Amount { get; set; }
 
         [DisplayName("Due date")]
-        public decimal Invoice_DueDate { get; set; }
+        public DateTime Invoice_DueDate { get; set; }
 
         [DisplayName("Total amount due")]
         public decimal Invoice_AmountDue { get; set; }
