@@ -1,0 +1,82 @@
+﻿@model Messenger_King_Courier.Models.AppModels.Booking
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote.Quote_PickupAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote.Quote_PickupAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book_PickupDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_PickupDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book_DeliveryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_DeliveryDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book_RecipientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_RecipientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book_RecipientSurname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_RecipientSurname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book_RecipientNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_RecipientNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book_DeliveryNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_DeliveryNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book_TotalCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_TotalCost)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Book_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

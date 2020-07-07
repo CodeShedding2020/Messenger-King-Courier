@@ -23,13 +23,13 @@ namespace Messenger_King_Courier.Models.AppModels
         public decimal Invoice_Amount { get; set; }
 
         [DisplayName("Due date")]
-        public DateTime Invoice_DueDate { get; set; }
+        public decimal Invoice_DueDate { get; set; }
 
         [DisplayName("Total amount due")]
-        public DateTime Invoice_AmountDue { get; set; }
+        public decimal Invoice_AmountDue { get; set; }
 
         [DisplayName("VAT")]
-        public DateTime Invoice_VAT { get; set; }
+        public decimal Invoice_VAT { get; set; }
 
         public int Order_ID { get; set; }
         public virtual Order Order { get; set; }
