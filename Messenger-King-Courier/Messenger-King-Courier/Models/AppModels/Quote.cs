@@ -57,7 +57,7 @@ namespace Messenger_King_Courier.Models.AppModels
 
         [Required(ErrorMessage = "Item weight is required")]
         [DisplayName("Item weight")]
-        public int Quote_Weight { get; set; }
+        public double Quote_Weight { get; set; }
 
 
         public string Client_ID { get; set; }
