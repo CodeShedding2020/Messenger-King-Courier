@@ -142,7 +142,7 @@ namespace Messenger_King_Courier.Controllers
         {
             return View();
         }
-
+        //
         ApplicationDbContext applicationDb = new ApplicationDbContext();
         //
         // POST: /Account/Register
