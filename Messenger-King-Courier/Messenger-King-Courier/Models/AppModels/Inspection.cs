@@ -28,7 +28,8 @@ namespace Messenger_King_Courier.Models.AppModels
         public virtual Vehicle Vehicle { get; set; }
 
         public int InspectCat_ID { get; set; }
-        public virtual InspectionCategory InspectionCategory   { get; set; }
+        public virtual InspectionCategory InspectionCategory   { get; set; } // Work the code
+        
        
 
     }
