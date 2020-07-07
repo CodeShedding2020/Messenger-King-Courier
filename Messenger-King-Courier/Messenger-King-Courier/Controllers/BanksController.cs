@@ -42,7 +42,7 @@ namespace Messenger_King_Courier.Controllers
         {
             ViewBag.AccountCat_ID = new SelectList(db.AccountCategories, "AccountCat_ID", "Account_Type");
             ViewBag.BankCat_ID = new SelectList(db.BankCategories, "BankCat_ID", "Bank_Name");
-            ViewBag.CLient_IDNo = new SelectList(db.Clients, "CLient_IDNo", "Client_Name");
+            ViewBag.Client_ID = new SelectList(db.Clients, "Client_ID", "Client_IDNo");
             ViewBag.Driver_IDNo = new SelectList(db.Drivers, "Driver_IDNo", "Driver_Name");
             return View();
         }
@@ -52,13 +52,10 @@ namespace Messenger_King_Courier.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Bank_ID,Bank_Account_Holder,Bank_Account_Number,Debit_Date,Driver_IDNo,CLient_IDNo,BankCat_ID,AccountCat_ID")] Bank bank)
+        public ActionResult Create([Bind(Include = "Bank_ID,Bank_Account_Holder,Bank_Account_Number,Debit_Date,Driver_IDNo,Client_ID,BankCat_ID,AccountCat_ID")] Bank bank)
         {
             if (ModelState.IsValid)
             {
-                bank.Bank_Account_Holder = bank.Bank_Account_Holder;
-                bank.Bank_Account_Number = bank.Bank_Account_Number;
-                bank.Debit_Date = bank.Debit_Date;
                 db.Banks.Add(bank);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -66,7 +63,7 @@ namespace Messenger_King_Courier.Controllers
 
             ViewBag.AccountCat_ID = new SelectList(db.AccountCategories, "AccountCat_ID", "Account_Type", bank.AccountCat_ID);
             ViewBag.BankCat_ID = new SelectList(db.BankCategories, "BankCat_ID", "Bank_Name", bank.BankCat_ID);
-            ViewBag.CLient_IDNo = new SelectList(db.Clients, "CLient_IDNo", "Client_Name", bank.CLient_IDNo);
+            ViewBag.Client_ID = new SelectList(db.Clients, "Client_ID", "Client_IDNo", bank.Client_ID);
             ViewBag.Driver_IDNo = new SelectList(db.Drivers, "Driver_IDNo", "Driver_Name", bank.Driver_IDNo);
             return View(bank);
         }
@@ -85,7 +82,7 @@ namespace Messenger_King_Courier.Controllers
             }
             ViewBag.AccountCat_ID = new SelectList(db.AccountCategories, "AccountCat_ID", "Account_Type", bank.AccountCat_ID);
             ViewBag.BankCat_ID = new SelectList(db.BankCategories, "BankCat_ID", "Bank_Name", bank.BankCat_ID);
-            ViewBag.CLient_IDNo = new SelectList(db.Clients, "CLient_IDNo", "Client_Name", bank.CLient_IDNo);
+            ViewBag.Client_ID = new SelectList(db.Clients, "Client_ID", "Client_IDNo", bank.Client_ID);
             ViewBag.Driver_IDNo = new SelectList(db.Drivers, "Driver_IDNo", "Driver_Name", bank.Driver_IDNo);
             return View(bank);
         }
@@ -95,7 +92,7 @@ namespace Messenger_King_Courier.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Bank_ID,Bank_Account_Holder,Bank_Account_Number,Debit_Date,Driver_IDNo,CLient_IDNo,BankCat_ID,AccountCat_ID")] Bank bank)
+        public ActionResult Edit([Bind(Include = "Bank_ID,Bank_Account_Holder,Bank_Account_Number,Debit_Date,Driver_IDNo,Client_ID,BankCat_ID,AccountCat_ID")] Bank bank)
         {
             if (ModelState.IsValid)
             {
@@ -105,7 +102,7 @@ namespace Messenger_King_Courier.Controllers
             }
             ViewBag.AccountCat_ID = new SelectList(db.AccountCategories, "AccountCat_ID", "Account_Type", bank.AccountCat_ID);
             ViewBag.BankCat_ID = new SelectList(db.BankCategories, "BankCat_ID", "Bank_Name", bank.BankCat_ID);
-            ViewBag.CLient_IDNo = new SelectList(db.Clients, "CLient_IDNo", "Client_Name", bank.CLient_IDNo);
+            ViewBag.Client_ID = new SelectList(db.Clients, "Client_ID", "Client_IDNo", bank.Client_ID);
             ViewBag.Driver_IDNo = new SelectList(db.Drivers, "Driver_IDNo", "Driver_Name", bank.Driver_IDNo);
             return View(bank);
         }

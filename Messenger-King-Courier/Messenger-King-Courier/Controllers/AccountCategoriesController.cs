@@ -51,7 +51,6 @@ namespace Messenger_King_Courier.Controllers
         {
             if (ModelState.IsValid)
             {
-                accountCategory.Account_Type = accountCategory.Account_Type;
                 db.AccountCategories.Add(accountCategory);
                 db.SaveChanges();
                 return RedirectToAction("Index");

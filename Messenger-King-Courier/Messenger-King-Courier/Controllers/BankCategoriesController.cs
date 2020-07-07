@@ -51,7 +51,6 @@ namespace Messenger_King_Courier.Controllers
         {
             if (ModelState.IsValid)
             {
-                bankCategory.Bank_Name = bankCategory.Bank_Name;
                 db.BankCategories.Add(bankCategory);
                 db.SaveChanges();
                 return RedirectToAction("Index");

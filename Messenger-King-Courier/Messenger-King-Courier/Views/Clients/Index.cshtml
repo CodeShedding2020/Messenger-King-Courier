@@ -15,6 +15,9 @@
             @Html.DisplayNameFor(model => model.ClientCategory.ClientCat_Type)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Client_IDNo)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Client_Name)
         </th>
         <th>
@@ -41,6 +44,9 @@
             @Html.DisplayFor(modelItem => item.ClientCategory.ClientCat_Type)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Client_IDNo)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Client_Name)
         </td>
         <td>
@@ -59,9 +65,9 @@
             @Html.DisplayFor(modelItem => item.Client_Tellnum)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CLient_IDNo }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CLient_IDNo }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CLient_IDNo })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Client_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Client_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Client_ID })
         </td>
     </tr>
 }

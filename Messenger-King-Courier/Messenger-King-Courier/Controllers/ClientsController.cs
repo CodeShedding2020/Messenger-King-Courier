@@ -49,16 +49,10 @@ namespace Messenger_King_Courier.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CLient_IDNo,Client_Name,Client_Surname,Client_Cellnumber,Client_Address,Client_Email,Client_Tellnum,ClientCat_ID")] Client client)
+        public ActionResult Create([Bind(Include = "Client_ID,Client_IDNo,Client_Name,Client_Surname,Client_Cellnumber,Client_Address,Client_Email,Client_Tellnum,ClientCat_ID")] Client client)
         {
             if (ModelState.IsValid)
             {
-                client.Client_Name = client.Client_Name;
-                client.Client_Surname = client.Client_Surname;
-                client.Client_Cellnumber = client.Client_Cellnumber;
-                client.Client_Address = client.Client_Address;
-                client.Client_Email = client.Client_Email;
-                client.Client_Tellnum = client.Client_Tellnum;
                 db.Clients.Add(client);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -89,7 +83,7 @@ namespace Messenger_King_Courier.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CLient_IDNo,Client_Name,Client_Surname,Client_Cellnumber,Client_Address,Client_Email,Client_Tellnum,ClientCat_ID")] Client client)
+        public ActionResult Edit([Bind(Include = "Client_ID,Client_IDNo,Client_Name,Client_Surname,Client_Cellnumber,Client_Address,Client_Email,Client_Tellnum,ClientCat_ID")] Client client)
         {
             if (ModelState.IsValid)
             {

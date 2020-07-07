@@ -13,6 +13,7 @@ namespace Messenger_King_Courier.Models.AppModels
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DisplayName("Bookiing ID")]
         public int Book_ID { get; set; }
 
         [Required(ErrorMessage = "Pickup date is required")]

@@ -9,6 +9,7 @@ namespace Messenger_King_Courier.Models.AppModels
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DisplayName("Tracking category ID")]
         public int TrackingCat_ID { get; set; }
 
         [Required(ErrorMessage ="Tracking status is required")]

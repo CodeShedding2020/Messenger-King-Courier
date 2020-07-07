@@ -18,15 +18,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Bank_Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.Bank_Name,
-                new List<SelectListItem> {
-                new SelectListItem {Text ="Absa Bank"},
-                new SelectListItem {Text ="Capitec Bank"},
-                new SelectListItem {Text ="First National Bank"},
-                new SelectListItem {Text ="Nedbank"},
-                new SelectListItem {Text ="Standard Bank"},
-                },
-                new { @class = "Selct item"})
+                @Html.EditorFor(model => model.Bank_Name, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Bank_Name, "", new { @class = "text-danger" })
             </div>
         </div>

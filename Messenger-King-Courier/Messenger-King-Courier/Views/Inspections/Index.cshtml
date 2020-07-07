@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Messenger_King_Courier.Models.AppModels.Inspection>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InspectionCategory.InspectCat_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vehicle.Vehicle_Make)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Condition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Inspection_Date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.InspectionCategory.InspectCat_Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehicle.Vehicle_Make)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Condition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Inspection_Date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Inspection_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Inspection_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Inspection_ID })
+        </td>
+    </tr>
+}
+
+</table>

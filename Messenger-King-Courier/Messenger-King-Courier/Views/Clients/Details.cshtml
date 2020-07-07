@@ -19,6 +19,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Client_IDNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client_IDNo)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Client_Name)
         </dt>
 
@@ -69,6 +77,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CLient_IDNo }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Client_ID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

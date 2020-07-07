@@ -18,12 +18,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ClientCat_Type, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.ClientCat_Type,
-                new List<SelectListItem> {
-                new SelectListItem {Text ="Once-off"},
-                new SelectListItem {Text ="Contract"},
-                },
-                new { @class = "Selct item" })
+                @Html.EditorFor(model => model.ClientCat_Type, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ClientCat_Type, "", new { @class = "text-danger" })
             </div>
         </div>
