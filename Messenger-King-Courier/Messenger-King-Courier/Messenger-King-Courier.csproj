@@ -237,8 +237,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountCategories1Controller.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BankCategories1Controller.cs" />
+    <Compile Include="Controllers\Banks1Controller.cs" />
     <Compile Include="Controllers\BookingsController.cs" />
+    <Compile Include="Controllers\ClientCategories1Controller.cs" />
+    <Compile Include="Controllers\Clients1Controller.cs" />
     <Compile Include="Controllers\DriversController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvoicesController.cs" />
@@ -395,6 +400,31 @@
     <Content Include="Views\Bookings\Details.cshtml" />
     <Content Include="Views\Bookings\Edit.cshtml" />
     <Content Include="Views\Bookings\Index.cshtml" />
+    <Content Include="Views\Clients1\Create.cshtml" />
+    <Content Include="Views\Clients1\Delete.cshtml" />
+    <Content Include="Views\Clients1\Details.cshtml" />
+    <Content Include="Views\Clients1\Edit.cshtml" />
+    <Content Include="Views\Clients1\Index.cshtml" />
+    <Content Include="Views\ClientCategories1\Create.cshtml" />
+    <Content Include="Views\ClientCategories1\Delete.cshtml" />
+    <Content Include="Views\ClientCategories1\Details.cshtml" />
+    <Content Include="Views\ClientCategories1\Edit.cshtml" />
+    <Content Include="Views\ClientCategories1\Index.cshtml" />
+    <Content Include="Views\AccountCategories1\Create.cshtml" />
+    <Content Include="Views\AccountCategories1\Delete.cshtml" />
+    <Content Include="Views\AccountCategories1\Details.cshtml" />
+    <Content Include="Views\AccountCategories1\Edit.cshtml" />
+    <Content Include="Views\AccountCategories1\Index.cshtml" />
+    <Content Include="Views\BankCategories1\Create.cshtml" />
+    <Content Include="Views\BankCategories1\Delete.cshtml" />
+    <Content Include="Views\BankCategories1\Details.cshtml" />
+    <Content Include="Views\BankCategories1\Edit.cshtml" />
+    <Content Include="Views\BankCategories1\Index.cshtml" />
+    <Content Include="Views\Banks1\Create.cshtml" />
+    <Content Include="Views\Banks1\Delete.cshtml" />
+    <Content Include="Views\Banks1\Details.cshtml" />
+    <Content Include="Views\Banks1\Edit.cshtml" />
+    <Content Include="Views\Banks1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
