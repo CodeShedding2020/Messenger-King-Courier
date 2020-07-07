@@ -8,6 +8,7 @@ namespace Messenger_King_Courier.Models.AppModels
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DisplayName("Document ID")]
         public int Documents_ID { get; set; }
 
         [DisplayName("ID Document")]
@@ -20,7 +21,7 @@ namespace Messenger_King_Courier.Models.AppModels
         public byte[] Document_Statement { get; set; }
 
 
-        public string CLient_IDNo { get; set; }
+        public string Client_ID { get; set; }
         public virtual Client Client { get; set; }
 
         public string Driver_IDNo { get; set; }

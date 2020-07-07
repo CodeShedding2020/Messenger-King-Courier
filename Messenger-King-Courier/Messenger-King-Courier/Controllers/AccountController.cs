@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Messenger_King_Courier.Models;
+using Messenger_King_Courier.Models.AppModels;
 
 namespace Messenger_King_Courier.Controllers
 {
@@ -141,7 +142,8 @@ namespace Messenger_King_Courier.Controllers
         {
             return View();
         }
-
+        //
+        ApplicationDbContext applicationDb = new ApplicationDbContext();
         //
         // POST: /Account/Register
         [HttpPost]
@@ -153,6 +155,14 @@ namespace Messenger_King_Courier.Controllers
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
+
+                UserManager.AddToRole(user.Id, "Client");
+
+                Client client = new Client();
+                client.Client_ID = user.Id;
+                applicationDb.Clients.Add(client);
+                applicationDb.SaveChanges();
+
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);

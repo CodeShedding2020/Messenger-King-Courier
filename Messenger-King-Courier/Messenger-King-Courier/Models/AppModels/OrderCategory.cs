@@ -13,7 +13,9 @@ namespace Messenger_King_Courier.Models.AppModels
         
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DisplayName("Ordre  category ID")]
         public int OrderCat_ID { get; set; }
+
         [Required(ErrorMessage = "Order status is required")]
         [DisplayName("Order status")]
         public string OrderCat_Status { get; set; }

@@ -1,0 +1,82 @@
+﻿@model Messenger_King_Courier.Models.AppModels.Client
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientCategory.ClientCat_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientCategory.ClientCat_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client_IDNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client_IDNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client_Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client_Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client_Cellnumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client_Cellnumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client_Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client_Tellnum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client_Tellnum)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Client_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

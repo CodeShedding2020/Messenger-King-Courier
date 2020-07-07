@@ -18,7 +18,7 @@ namespace Messenger_King_Courier.Controllers
         // GET: Trackings
         public ActionResult Index()
         {
-            var trackings = db.Trackings.Include(t => t.Order);
+            var trackings = db.Trackings.Include(t => t.Order).Include(t => t.Tracking_Category);
             return View(trackings.ToList());
         }
 
@@ -41,6 +41,7 @@ namespace Messenger_King_Courier.Controllers
         public ActionResult Create()
         {
             ViewBag.Order_ID = new SelectList(db.Orders, "Order_ID", "Order_ID");
+            ViewBag.TrackingCat_ID = new SelectList(db.TrackingCategories, "TrackingCat_ID", "TrackingCat_Status");
             return View();
         }
 
@@ -49,7 +50,7 @@ namespace Messenger_King_Courier.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Track_ID,Track_Message,TrackingCat_ID,Order_ID,TrackingStat_ID")] Tracking tracking)
+        public ActionResult Create([Bind(Include = "Track_ID,Track_Message,Order_ID,TrackingCat_ID")] Tracking tracking)
         {
             if (ModelState.IsValid)
             {
@@ -59,6 +60,7 @@ namespace Messenger_King_Courier.Controllers
             }
 
             ViewBag.Order_ID = new SelectList(db.Orders, "Order_ID", "Order_ID", tracking.Order_ID);
+            ViewBag.TrackingCat_ID = new SelectList(db.TrackingCategories, "TrackingCat_ID", "TrackingCat_Status", tracking.TrackingCat_ID);
             return View(tracking);
         }
 
@@ -75,6 +77,7 @@ namespace Messenger_King_Courier.Controllers
                 return HttpNotFound();
             }
             ViewBag.Order_ID = new SelectList(db.Orders, "Order_ID", "Order_ID", tracking.Order_ID);
+            ViewBag.TrackingCat_ID = new SelectList(db.TrackingCategories, "TrackingCat_ID", "TrackingCat_Status", tracking.TrackingCat_ID);
             return View(tracking);
         }
 
@@ -83,7 +86,7 @@ namespace Messenger_King_Courier.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Track_ID,Track_Message,TrackingCat_ID,Order_ID,TrackingStat_ID")] Tracking tracking)
+        public ActionResult Edit([Bind(Include = "Track_ID,Track_Message,Order_ID,TrackingCat_ID")] Tracking tracking)
         {
             if (ModelState.IsValid)
             {
@@ -92,6 +95,7 @@ namespace Messenger_King_Courier.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.Order_ID = new SelectList(db.Orders, "Order_ID", "Order_ID", tracking.Order_ID);
+            ViewBag.TrackingCat_ID = new SelectList(db.TrackingCategories, "TrackingCat_ID", "TrackingCat_Status", tracking.TrackingCat_ID);
             return View(tracking);
         }
 

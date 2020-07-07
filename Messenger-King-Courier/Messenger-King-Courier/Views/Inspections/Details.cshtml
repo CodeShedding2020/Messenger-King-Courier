@@ -1,0 +1,50 @@
+﻿@model Messenger_King_Courier.Models.AppModels.Inspection
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Inspection</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InspectionCategory.InspectCat_Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InspectionCategory.InspectCat_Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle.Vehicle_Make)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle.Vehicle_Make)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Condition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Condition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inspection_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inspection_Date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Inspection_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
