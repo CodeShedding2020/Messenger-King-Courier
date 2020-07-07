@@ -40,7 +40,7 @@ namespace Messenger_King_Courier.Controllers
         // GET: Quotes/Create
         public ActionResult Create()
         {
-            ViewBag.CLient_IDNo = new SelectList(db.Clients, "CLient_IDNo", "Client_Name");
+            ViewBag.Client_ID = new SelectList(db.Clients, "Client_ID", "Client_IDNo");
             ViewBag.Rate_ID = new SelectList(db.Rates, "Rate_ID", "Rate_ID");
             return View();
         }
@@ -50,7 +50,7 @@ namespace Messenger_King_Courier.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Quote_ID,Quote_Date,Quote_PickupAddress,Quote_DeliveryAddress,Quote_Distance,Quote_Description,Quote_Cost,Item_Quantity,Quote_length,Quote_Height,Quote_Width,Quote_Weight,CLient_IDNo,Rate_ID")] Quote quote)
+        public ActionResult Create([Bind(Include = "Quote_ID,Quote_Date,Quote_PickupAddress,Quote_DeliveryAddress,Quote_Distance,Quote_Description,Quote_Cost,Item_Quantity,Quote_length,Quote_Height,Quote_Width,Quote_Weight,Client_ID,Rate_ID")] Quote quote)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +59,7 @@ namespace Messenger_King_Courier.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CLient_IDNo = new SelectList(db.Clients, "CLient_IDNo", "Client_Name", quote.CLient_IDNo);
+            ViewBag.Client_ID = new SelectList(db.Clients, "Client_ID", "Client_IDNo", quote.Client_ID);
             ViewBag.Rate_ID = new SelectList(db.Rates, "Rate_ID", "Rate_ID", quote.Rate_ID);
             return View(quote);
         }
@@ -76,7 +76,7 @@ namespace Messenger_King_Courier.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CLient_IDNo = new SelectList(db.Clients, "CLient_IDNo", "Client_Name", quote.CLient_IDNo);
+            ViewBag.Client_ID = new SelectList(db.Clients, "Client_ID", "Client_IDNo", quote.Client_ID);
             ViewBag.Rate_ID = new SelectList(db.Rates, "Rate_ID", "Rate_ID", quote.Rate_ID);
             return View(quote);
         }
@@ -86,7 +86,7 @@ namespace Messenger_King_Courier.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Quote_ID,Quote_Date,Quote_PickupAddress,Quote_DeliveryAddress,Quote_Distance,Quote_Description,Quote_Cost,Item_Quantity,Quote_length,Quote_Height,Quote_Width,Quote_Weight,CLient_IDNo,Rate_ID")] Quote quote)
+        public ActionResult Edit([Bind(Include = "Quote_ID,Quote_Date,Quote_PickupAddress,Quote_DeliveryAddress,Quote_Distance,Quote_Description,Quote_Cost,Item_Quantity,Quote_length,Quote_Height,Quote_Width,Quote_Weight,Client_ID,Rate_ID")] Quote quote)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +94,7 @@ namespace Messenger_King_Courier.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CLient_IDNo = new SelectList(db.Clients, "CLient_IDNo", "Client_Name", quote.CLient_IDNo);
+            ViewBag.Client_ID = new SelectList(db.Clients, "Client_ID", "Client_IDNo", quote.Client_ID);
             ViewBag.Rate_ID = new SelectList(db.Rates, "Rate_ID", "Rate_ID", quote.Rate_ID);
             return View(quote);
         }

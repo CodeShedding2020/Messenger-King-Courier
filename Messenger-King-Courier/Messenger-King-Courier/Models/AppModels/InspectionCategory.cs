@@ -12,6 +12,7 @@ namespace Messenger_King_Courier.Models.AppModels
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DisplayName("Inspection category ID")]
         public int InspectCat_ID { get; set; }
 
         [Required(ErrorMessage = "Inspection status is required")]

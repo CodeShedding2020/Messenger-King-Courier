@@ -12,6 +12,7 @@ namespace Messenger_King_Courier.Models.AppModels
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DisplayName("Inspection ID")]
         public int Inspection_ID { get; set; }
 
         [DisplayName("Vehicle condition")]
