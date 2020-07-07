@@ -1,0 +1,128 @@
+﻿@model Messenger_King_Courier.Models.AppModels.Quote
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Quote</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Client.Client_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client.Client_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rate.Rate_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rate.Rate_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_PickupAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_PickupAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_DeliveryAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_DeliveryAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_Distance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_Distance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item_Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item_Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_length)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_length)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_Height)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_Height)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_Width)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_Width)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_Weight)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
