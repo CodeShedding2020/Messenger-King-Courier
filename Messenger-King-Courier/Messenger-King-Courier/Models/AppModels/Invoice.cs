@@ -31,6 +31,7 @@ namespace Messenger_King_Courier.Models.AppModels
         [DisplayName("VAT")]
         public decimal Invoice_VAT { get; set; }
 
+        //[DisplayName("Order ID")]
         public int Order_ID { get; set; }
         public virtual Order Order { get; set; }
         public int Month_ID{ get; set; }
@@ -38,5 +39,13 @@ namespace Messenger_King_Courier.Models.AppModels
 
         public int Bank_ID { get; set; }
         public virtual Bank Bank { get; set; }
+
+        public decimal CalcVat()
+        {
+
+            return Invoice_Amount * 0.15M;
+        }
+
+
     }
 }
