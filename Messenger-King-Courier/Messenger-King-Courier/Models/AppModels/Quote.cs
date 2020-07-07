@@ -9,6 +9,7 @@ namespace Messenger_King_Courier.Models.AppModels
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DisplayName("Quote ID")]
         public int Quote_ID { get; set; }
 
         [DisplayName("Quote Date")]
@@ -34,23 +35,23 @@ namespace Messenger_King_Courier.Models.AppModels
 
         [Required(ErrorMessage = "Item quantity is required")]
         [DisplayName("Item quantity")]
-        public int Item_Quantity { get; set; }
+        public double Item_Quantity { get; set; }
 
 
         [Required(ErrorMessage = "Item length is required")]
         [DisplayName("Item length")]
-        public int Quote_length { get; set; }
+        public double Quote_length { get; set; }
 
 
         [Required(ErrorMessage = "Item height is required")]
         [DisplayName("Item height")]
-        public int Quote_Height { get; set; }
+        public double Quote_Height { get; set; }
 
 
 
         [Required(ErrorMessage = "Item width is required")]
         [DisplayName("Item width")]
-        public int Quote_Width { get; set; }
+        public double Quote_Width { get; set; }
         
 
 
@@ -59,7 +60,7 @@ namespace Messenger_King_Courier.Models.AppModels
         public int Quote_Weight { get; set; }
 
 
-        public string CLient_IDNo { get; set; }
+        public string Client_ID { get; set; }
         public virtual Client Client { get; set; }
 
         public int Rate_ID { get; set; }

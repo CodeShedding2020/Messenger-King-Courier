@@ -9,6 +9,7 @@ namespace Messenger_King_Courier.Models.AppModels
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DisplayName("Rate ID")]
         public int Rate_ID { get; set; }
 
         [Required(ErrorMessage = "Service cost is required")]
@@ -17,15 +18,15 @@ namespace Messenger_King_Courier.Models.AppModels
 
         [Required(ErrorMessage = "Cost per CM  is required")]
         [DisplayName("Cost per CM")]
-        public int Rate_PerCM { get; set; }
+        public decimal Rate_PerCM { get; set; }
 
         [Required(ErrorMessage = "Cost per KG is required")]
         [DisplayName("Cost per KG")]
-        public int Rate_PerKG { get; set; }
+        public decimal Rate_PerKG { get; set; }
 
         [Required(ErrorMessage = "Cost per KM is required")]
         [DisplayName("Cost per KM")]
-        public int Rate_PerKM { get; set; }
+        public decimal Rate_PerKM { get; set; }
 
       public virtual List<Quote> Quotes { get; set; }
 

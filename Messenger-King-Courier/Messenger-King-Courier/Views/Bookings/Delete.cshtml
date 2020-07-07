@@ -1,0 +1,88 @@
+﻿@model Messenger_King_Courier.Models.AppModels.Booking
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote.Quote_PickupAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote.Quote_PickupAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book_PickupDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_PickupDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book_DeliveryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_DeliveryDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book_RecipientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_RecipientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book_RecipientSurname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_RecipientSurname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book_RecipientNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_RecipientNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book_DeliveryNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_DeliveryNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book_TotalCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_TotalCost)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

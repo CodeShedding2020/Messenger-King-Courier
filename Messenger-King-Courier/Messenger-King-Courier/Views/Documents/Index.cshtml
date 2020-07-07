@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Messenger_King_Courier.Models.AppModels.Document>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Client.Client_IDNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Driver.Driver_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Document_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Document_Residence)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Document_Statement)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.Client_IDNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Driver.Driver_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Document_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Document_Residence)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Document_Statement)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Documents_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Documents_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Documents_ID })
+        </td>
+    </tr>
+}
+
+</table>

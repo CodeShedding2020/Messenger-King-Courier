@@ -10,6 +10,7 @@ namespace Messenger_King_Courier.Models.AppModels
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DisplayName("Bank ID")]
         public int Bank_ID { get; set; }
 
         [Required(ErrorMessage = "Account Holder is required")]
@@ -31,7 +32,7 @@ namespace Messenger_King_Courier.Models.AppModels
         public string Driver_IDNo { get; set; }
         public virtual Driver Driver { get; set; }
 
-        public string CLient_IDNo { get; set; }
+        public string Client_ID { get; set; }
         public virtual Client Client { get; set; }
 
         public int BankCat_ID { get; set; }

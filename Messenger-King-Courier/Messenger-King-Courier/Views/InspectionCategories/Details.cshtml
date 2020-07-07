@@ -1,0 +1,26 @@
+﻿@model Messenger_King_Courier.Models.AppModels.InspectionCategory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>InspectionCategory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InspectCat_Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InspectCat_Status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InspectCat_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

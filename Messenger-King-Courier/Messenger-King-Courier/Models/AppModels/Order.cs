@@ -14,6 +14,7 @@ namespace Messenger_King_Courier.Models.AppModels
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DisplayName("Order ID")]
         public int Order_ID { get; set; }
 
         [DataType(DataType.Date)]

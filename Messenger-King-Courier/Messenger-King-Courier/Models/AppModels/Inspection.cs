@@ -12,6 +12,7 @@ namespace Messenger_King_Courier.Models.AppModels
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DisplayName("Inspection ID")]
         public int Inspection_ID { get; set; }
 
         [DisplayName("Vehicle condition")]
@@ -27,7 +28,8 @@ namespace Messenger_King_Courier.Models.AppModels
         public virtual Vehicle Vehicle { get; set; }
 
         public int InspectCat_ID { get; set; }
-        public virtual InspectionCategory InspectionCategory   { get; set; }
+        public virtual InspectionCategory InspectionCategory   { get; set; } // Work the code
+        
        
 
     }
