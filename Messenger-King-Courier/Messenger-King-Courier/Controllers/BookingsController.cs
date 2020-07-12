@@ -49,7 +49,7 @@ namespace Messenger_King_Courier.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Book_ID,Book_PickupDate,Book_DeliveryDate,Book_RecipientName,Book_RecipientSurname,Book_RecipientNumber,Book_DeliveryNote,Book_TotalCost,Quote_ID")] Booking booking)
+        public ActionResult Create([Bind(Include = "Book_ID,Book_PickupDate,Book_DeliveryDate,Book_RecipientName,Book_RecipientSurname,Book_RecipientNumber,Book_DeliveryNote,Book_TotalCost,BookStatus,Quote_ID")] Booking booking)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace Messenger_King_Courier.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Book_ID,Book_PickupDate,Book_DeliveryDate,Book_RecipientName,Book_RecipientSurname,Book_RecipientNumber,Book_DeliveryNote,Book_TotalCost,Quote_ID")] Booking booking)
+        public ActionResult Edit([Bind(Include = "Book_ID,Book_PickupDate,Book_DeliveryDate,Book_RecipientName,Book_RecipientSurname,Book_RecipientNumber,Book_DeliveryNote,Book_TotalCost,BookStatus,Quote_ID")] Booking booking)
         {
             if (ModelState.IsValid)
             {

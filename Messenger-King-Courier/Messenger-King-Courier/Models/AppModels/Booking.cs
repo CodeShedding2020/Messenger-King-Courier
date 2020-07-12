@@ -51,6 +51,8 @@ namespace Messenger_King_Courier.Models.AppModels
         [DisplayName("Total Cost")]
         public double Book_TotalCost { get; set; }
 
+        public bool BookStatus { get; set; } 
+
         public int Quote_ID { get; set; }
         public virtual Quote Quote { get; set; }
         
