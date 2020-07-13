@@ -54,6 +54,7 @@ namespace Messenger_King_Courier.Controllers
         {
             if (ModelState.IsValid)
             {
+                inspection.Inspection_Date = DateTime.Now;
                 db.Inspections.Add(inspection);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -28,9 +28,32 @@ namespace Messenger_King_Courier.Models.AppModels
         public virtual Vehicle Vehicle { get; set; }
 
         public int InspectCat_ID { get; set; }
-        public virtual InspectionCategory InspectionCategory   { get; set; } // Work the code
-        
-       
+        public virtual InspectionCategory InspectionCategory   { get; set; }
+
+        ApplicationDbContext db = new ApplicationDbContext();
+        public void DetermineStatus()
+        {
+
+
+            var status = (from ic in db.InspectionCategories
+                          where ic.InspectCat_ID == InspectCat_ID
+                          select ic.InspectCat_Status).ToString();
+
+            if (Condition == "Not Good")
+            {
+                status = "Not ready for transporting";
+            }
+            else if (Condition == "Good")
+            {
+                status = "Ready for transporting";
+
+            }
+            db.Entry(status).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChangesAsync();
+        }
+
+
+
 
     }
 }

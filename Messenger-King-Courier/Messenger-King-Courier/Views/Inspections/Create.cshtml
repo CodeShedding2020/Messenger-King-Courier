@@ -18,19 +18,25 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Condition, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Condition, new { htmlAttributes = new { @class = "form-control" } })
+                 @Html.DropDownListFor(model => model.Condition, new List<SelectListItem>
+           {
+               new SelectListItem {Text="Good",Value="Good" },
+               new SelectListItem {Text="Not Good",Value="Not Good" }
+
+           })
+
+
                 @Html.ValidationMessageFor(model => model.Condition, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.Inspection_Date, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Inspection_Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DisplayFor(model => model.Inspection_Date, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Inspection_Date, "", new { @class = "text-danger" })
             </div>
-        </div>
-
+        </div>*@
         <div class="form-group">
             @Html.LabelFor(model => model.Vehicle_ID, "Vehicle_ID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
