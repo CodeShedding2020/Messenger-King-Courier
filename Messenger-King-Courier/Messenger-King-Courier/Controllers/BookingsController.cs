@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Messenger_King_Courier.Models;
 using Messenger_King_Courier.Models.AppModels;
+using Microsoft.AspNet.Identity;
 
 namespace Messenger_King_Courier.Controllers
 {
@@ -38,8 +39,10 @@ namespace Messenger_King_Courier.Controllers
         }
 
         // GET: Bookings/Create
-        public ActionResult Create()
+        public ActionResult Create(int?id)
         {
+            Booking booking = new Booking();
+            booking.Quote_ID = (int)id;
             ViewBag.Quote_ID = new SelectList(db.Quotes, "Quote_ID", "Quote_PickupAddress");
             return View();
         }
@@ -53,6 +56,8 @@ namespace Messenger_King_Courier.Controllers
         {
             if (ModelState.IsValid)
             {
+                var uid = User.Identity.GetUserId();
+              
                 db.Bookings.Add(booking);
                 db.SaveChanges();
                 return RedirectToAction("Index");

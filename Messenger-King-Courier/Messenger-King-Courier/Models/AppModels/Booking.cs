@@ -49,8 +49,10 @@ namespace Messenger_King_Courier.Models.AppModels
         public string Book_DeliveryNote { get; set; }
        
         [DisplayName("Total Cost")]
+        [ScaffoldColumn(false)]
         public double Book_TotalCost { get; set; }
 
+        [ScaffoldColumn(false)]
         public bool BookStatus { get; set; } 
 
         public int Quote_ID { get; set; }

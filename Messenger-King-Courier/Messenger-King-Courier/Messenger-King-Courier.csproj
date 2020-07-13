@@ -264,6 +264,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AppLogic\AccountingLogic.cs" />
     <Compile Include="Models\AppModels\AccountCategory.cs" />
     <Compile Include="Models\AppModels\Bank.cs" />
     <Compile Include="Models\AppModels\BankCategory.cs" />
@@ -276,6 +277,7 @@
     <Compile Include="Models\AppModels\InspectionCategory.cs" />
     <Compile Include="Models\AppModels\Month.cs" />
     <Compile Include="Models\AppModels\OrderCategory.cs" />
+    <Compile Include="Models\AppModels\Points.cs" />
     <Compile Include="Models\AppModels\Quote.cs" />
     <Compile Include="Models\AppModels\Rate.cs" />
     <Compile Include="Models\AppModels\Tracking.cs" />
@@ -423,11 +425,6 @@
     <Content Include="Views\InspectionCategories\Details.cshtml" />
     <Content Include="Views\InspectionCategories\Edit.cshtml" />
     <Content Include="Views\InspectionCategories\Index.cshtml" />
-    <Content Include="Views\Quotes\Create.cshtml" />
-    <Content Include="Views\Quotes\Delete.cshtml" />
-    <Content Include="Views\Quotes\Details.cshtml" />
-    <Content Include="Views\Quotes\Edit.cshtml" />
-    <Content Include="Views\Quotes\Index.cshtml" />
     <Content Include="Views\Invoices\Create.cshtml" />
     <Content Include="Views\Invoices\Delete.cshtml" />
     <Content Include="Views\Invoices\Details.cshtml" />
@@ -438,6 +435,11 @@
     <Content Include="Views\Bookings\Details.cshtml" />
     <Content Include="Views\Bookings\Edit.cshtml" />
     <Content Include="Views\Bookings\Index.cshtml" />
+    <Content Include="Views\Quotes\Create.cshtml" />
+    <Content Include="Views\Quotes\Delete.cshtml" />
+    <Content Include="Views\Quotes\Details.cshtml" />
+    <Content Include="Views\Quotes\Edit.cshtml" />
+    <Content Include="Views\Quotes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
