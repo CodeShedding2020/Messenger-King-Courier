@@ -45,6 +45,7 @@ namespace Messenger_King_Courier.Models
         public DbSet<Tracking> Trackings { get; set; }
         public DbSet<TrackingCategory> TrackingCategories { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
+       public DbSet<Messenger_King_Courier.ViewModels.InspectedVehicles> inspectedVehicles { get; set; }
 
         public static ApplicationDbContext Create()
         {
