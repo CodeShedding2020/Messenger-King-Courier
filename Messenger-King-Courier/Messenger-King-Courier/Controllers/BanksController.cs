@@ -56,6 +56,9 @@ namespace Messenger_King_Courier.Controllers
         {
             if (ModelState.IsValid)
             {
+                bank.Bank_Account_Holder = bank.Bank_Account_Holder;
+                bank.Bank_Account_Number = bank.Bank_Account_Number;
+                bank.Debit_Date = bank.Debit_Date;
                 db.Banks.Add(bank);
                 db.SaveChanges();
                 return RedirectToAction("Index");

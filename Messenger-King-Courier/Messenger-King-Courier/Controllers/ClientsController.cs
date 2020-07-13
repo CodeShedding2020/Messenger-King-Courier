@@ -53,6 +53,12 @@ namespace Messenger_King_Courier.Controllers
         {
             if (ModelState.IsValid)
             {
+                client.Client_IDNo = client.Client_IDNo;
+                client.Client_Name = client.Client_Name;
+                client.Client_Surname = client.Client_Surname;
+                client.Client_Address = client.Client_Address;
+                client.Client_Email = client.Client_Email;
+                client.Client_Tellnum = client.Client_Tellnum;
                 db.Clients.Add(client);
                 db.SaveChanges();
                 return RedirectToAction("Index");
