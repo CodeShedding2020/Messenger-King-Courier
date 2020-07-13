@@ -163,6 +163,7 @@ namespace Messenger_King_Courier.Controllers
                 applicationDb.Clients.Add(client);
                 applicationDb.SaveChanges();
 
+
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);

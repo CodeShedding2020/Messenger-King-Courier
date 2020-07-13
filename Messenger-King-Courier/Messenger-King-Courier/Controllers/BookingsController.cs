@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Messenger_King_Courier.Models;
 using Messenger_King_Courier.Models.AppModels;
+using Microsoft.AspNet.Identity;
 
 namespace Messenger_King_Courier.Controllers
 {
@@ -38,8 +39,10 @@ namespace Messenger_King_Courier.Controllers
         }
 
         // GET: Bookings/Create
-        public ActionResult Create()
+        public ActionResult Create(int?id)
         {
+            Booking booking = new Booking();
+            booking.Quote_ID = (int)id;
             ViewBag.Quote_ID = new SelectList(db.Quotes, "Quote_ID", "Quote_PickupAddress");
             return View();
         }
@@ -49,10 +52,12 @@ namespace Messenger_King_Courier.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Book_ID,Book_PickupDate,Book_DeliveryDate,Book_RecipientName,Book_RecipientSurname,Book_RecipientNumber,Book_DeliveryNote,Book_TotalCost,Quote_ID")] Booking booking)
+        public ActionResult Create([Bind(Include = "Book_ID,Book_PickupDate,Book_DeliveryDate,Book_RecipientName,Book_RecipientSurname,Book_RecipientNumber,Book_DeliveryNote,Book_TotalCost,BookStatus,Quote_ID")] Booking booking)
         {
             if (ModelState.IsValid)
             {
+                var uid = User.Identity.GetUserId();
+              
                 db.Bookings.Add(booking);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -83,7 +88,7 @@ namespace Messenger_King_Courier.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Book_ID,Book_PickupDate,Book_DeliveryDate,Book_RecipientName,Book_RecipientSurname,Book_RecipientNumber,Book_DeliveryNote,Book_TotalCost,Quote_ID")] Booking booking)
+        public ActionResult Edit([Bind(Include = "Book_ID,Book_PickupDate,Book_DeliveryDate,Book_RecipientName,Book_RecipientSurname,Book_RecipientNumber,Book_DeliveryNote,Book_TotalCost,BookStatus,Quote_ID")] Booking booking)
         {
             if (ModelState.IsValid)
             {

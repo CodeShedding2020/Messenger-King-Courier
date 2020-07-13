@@ -35,6 +35,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Book_TotalCost)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookStatus)
+        </th>
         <th></th>
     </tr>
 
@@ -63,6 +66,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Book_TotalCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookStatus)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Book_ID }) |

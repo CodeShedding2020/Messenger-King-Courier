@@ -12,6 +12,7 @@ namespace Messenger_King_Courier.Models.AppModels
         [DisplayName("Quote ID")]
         public int Quote_ID { get; set; }
 
+        [ScaffoldColumn(false)]
         [DisplayName("Quote Date")]
         public DateTime Quote_Date { get; set; }
 
@@ -23,6 +24,7 @@ namespace Messenger_King_Courier.Models.AppModels
         [DisplayName("Delivery address")]
         public string Quote_DeliveryAddress { get; set; }
 
+        [ScaffoldColumn(false)]
         [DisplayName("Distance")]
         public float Quote_Distance { get; set; }
 
@@ -30,6 +32,7 @@ namespace Messenger_King_Courier.Models.AppModels
         [DisplayName("Item description")]
         public string Quote_Description { get; set; }
 
+        [ScaffoldColumn(false)]
         [DisplayName("Total cost")]
         public decimal Quote_Cost { get; set; }
 
@@ -57,12 +60,15 @@ namespace Messenger_King_Courier.Models.AppModels
 
         [Required(ErrorMessage = "Item weight is required")]
         [DisplayName("Item weight")]
-        public int Quote_Weight { get; set; }
+        public double Quote_Weight { get; set; }
+        [DisplayName("Quote Status")]
+        public bool Quote_Status { get; set; }
 
-
+        [ScaffoldColumn(false)]
         public string Client_ID { get; set; }
         public virtual Client Client { get; set; }
 
+        [ScaffoldColumn(false)]
         public int Rate_ID { get; set; }
         public virtual Rate Rate { get; set; }
     }
