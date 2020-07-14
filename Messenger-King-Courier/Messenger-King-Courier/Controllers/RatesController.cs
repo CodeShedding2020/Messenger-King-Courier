@@ -18,7 +18,8 @@ namespace Messenger_King_Courier.Controllers
         // GET: Rates
         public ActionResult Index()
         {
-            return View(db.Rates.ToList());
+            var rates = db.Rates.Include(r => r.ClientCategory);
+            return View(rates.ToList());
         }
 
         // GET: Rates/Details/5
@@ -39,6 +40,7 @@ namespace Messenger_King_Courier.Controllers
         // GET: Rates/Create
         public ActionResult Create()
         {
+            ViewBag.ClientCat_ID = new SelectList(db.ClientCategories, "ClientCat_ID", "ClientCat_Type");
             return View();
         }
 
@@ -47,7 +49,7 @@ namespace Messenger_King_Courier.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Rate_ID,Base_Cost,Rate_PerCM,Rate_PerKG,Rate_PerKM")] Rate rate)
+        public ActionResult Create([Bind(Include = "Rate_ID,Base_Cost,Rate_PerCM,Rate_PerKG,Rate_PerKM,ClientCat_ID")] Rate rate)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +58,7 @@ namespace Messenger_King_Courier.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.ClientCat_ID = new SelectList(db.ClientCategories, "ClientCat_ID", "ClientCat_Type", rate.ClientCat_ID);
             return View(rate);
         }
 
@@ -71,6 +74,7 @@ namespace Messenger_King_Courier.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ClientCat_ID = new SelectList(db.ClientCategories, "ClientCat_ID", "ClientCat_Type", rate.ClientCat_ID);
             return View(rate);
         }
 
@@ -79,7 +83,7 @@ namespace Messenger_King_Courier.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Rate_ID,Base_Cost,Rate_PerCM,Rate_PerKG,Rate_PerKM")] Rate rate)
+        public ActionResult Edit([Bind(Include = "Rate_ID,Base_Cost,Rate_PerCM,Rate_PerKG,Rate_PerKM,ClientCat_ID")] Rate rate)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +91,7 @@ namespace Messenger_King_Courier.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ClientCat_ID = new SelectList(db.ClientCategories, "ClientCat_ID", "ClientCat_Type", rate.ClientCat_ID);
             return View(rate);
         }
 

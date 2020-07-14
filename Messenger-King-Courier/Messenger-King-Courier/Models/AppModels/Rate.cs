@@ -28,7 +28,10 @@ namespace Messenger_King_Courier.Models.AppModels
         [DisplayName("Cost per KM")]
         public decimal Rate_PerKM { get; set; }
 
-      public virtual List<Quote> Quotes { get; set; }
+        public int ClientCat_ID { get; set; }
+        public virtual ClientCategory ClientCategory { get; set; }
+
+        public virtual List<Quote> Quotes { get; set; }
 
     }
 }

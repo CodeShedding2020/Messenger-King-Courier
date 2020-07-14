@@ -45,14 +45,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -190,6 +182,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -258,15 +256,18 @@
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\QuotesController.cs" />
     <Compile Include="Controllers\RatesController.cs" />
+    <Compile Include="Controllers\RolesBusiness.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\TrackingCategoriesController.cs" />
     <Compile Include="Controllers\TrackingsController.cs" />
     <Compile Include="Controllers\VehiclesController.cs" />
-    <Compile Include="Controllers\ViewModelsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationRole.cs" />
+    <Compile Include="Models\AppLogic\AccountingLogic.cs" />
     <Compile Include="Models\AppModels\AccountCategory.cs" />
     <Compile Include="Models\AppModels\Bank.cs" />
     <Compile Include="Models\AppModels\BankCategory.cs" />
@@ -279,18 +280,21 @@
     <Compile Include="Models\AppModels\InspectionCategory.cs" />
     <Compile Include="Models\AppModels\Month.cs" />
     <Compile Include="Models\AppModels\OrderCategory.cs" />
+    <Compile Include="Models\AppModels\Points.cs" />
     <Compile Include="Models\AppModels\Quote.cs" />
     <Compile Include="Models\AppModels\Rate.cs" />
     <Compile Include="Models\AppModels\Tracking.cs" />
     <Compile Include="Models\AppModels\TrackingCategory.cs" />
     <Compile Include="Models\AppModels\Vehicle.cs" />
+    <Compile Include="Models\IApplicationUser.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\AppModels\Invoice.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\AppModels\Order.cs" />
+    <Compile Include="Models\RolesView.cs" />
+    <Compile Include="Models\UsersView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\InspectedVehicles.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Database1.mdf" />
@@ -407,21 +411,6 @@
     <Content Include="Views\Clients\Details.cshtml" />
     <Content Include="Views\Clients\Edit.cshtml" />
     <Content Include="Views\Clients\Index.cshtml" />
-    <Content Include="Views\Invoices\Create.cshtml" />
-    <Content Include="Views\Invoices\Delete.cshtml" />
-    <Content Include="Views\Invoices\Details.cshtml" />
-    <Content Include="Views\Invoices\Edit.cshtml" />
-    <Content Include="Views\Invoices\Index.cshtml" />
-    <Content Include="Views\Quotes\Create.cshtml" />
-    <Content Include="Views\Quotes\Delete.cshtml" />
-    <Content Include="Views\Quotes\Details.cshtml" />
-    <Content Include="Views\Quotes\Edit.cshtml" />
-    <Content Include="Views\Quotes\Index.cshtml" />
-    <Content Include="Views\Bookings\Create.cshtml" />
-    <Content Include="Views\Bookings\Delete.cshtml" />
-    <Content Include="Views\Bookings\Details.cshtml" />
-    <Content Include="Views\Bookings\Edit.cshtml" />
-    <Content Include="Views\Bookings\Index.cshtml" />
     <Content Include="Views\Trackings\Create.cshtml" />
     <Content Include="Views\Trackings\Delete.cshtml" />
     <Content Include="Views\Trackings\Details.cshtml" />
@@ -442,7 +431,27 @@
     <Content Include="Views\InspectionCategories\Details.cshtml" />
     <Content Include="Views\InspectionCategories\Edit.cshtml" />
     <Content Include="Views\InspectionCategories\Index.cshtml" />
-    <Content Include="Views\ViewModels\Index.cshtml" />
+    <Content Include="Views\Invoices\Create.cshtml" />
+    <Content Include="Views\Invoices\Delete.cshtml" />
+    <Content Include="Views\Invoices\Details.cshtml" />
+    <Content Include="Views\Invoices\Edit.cshtml" />
+    <Content Include="Views\Invoices\Index.cshtml" />
+    <Content Include="Views\Bookings\Create.cshtml" />
+    <Content Include="Views\Bookings\Delete.cshtml" />
+    <Content Include="Views\Bookings\Details.cshtml" />
+    <Content Include="Views\Bookings\Edit.cshtml" />
+    <Content Include="Views\Bookings\Index.cshtml" />
+    <Content Include="Views\Quotes\Create.cshtml" />
+    <Content Include="Views\Quotes\Delete.cshtml" />
+    <Content Include="Views\Quotes\Details.cshtml" />
+    <Content Include="Views\Quotes\Edit.cshtml" />
+    <Content Include="Views\Quotes\Index.cshtml" />
+    <Content Include="Views\Roles\AddRole.cshtml" />
+    <Content Include="Views\Roles\AddUserToRole.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Roles\RemoveFromRole.cshtml" />
+    <Content Include="Views\Roles\RolesForThisUser.cshtml" />
+    <Content Include="Views\Roles\UsersInRole.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

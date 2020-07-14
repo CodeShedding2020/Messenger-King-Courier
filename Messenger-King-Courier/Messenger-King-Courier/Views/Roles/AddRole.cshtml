@@ -1,0 +1,37 @@
+﻿<div style="margin-left:3%; margin-bottom:5%">
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Hover Data Table</h3>
+        </div>
+        <div class="box-body">
+
+
+            @Html.ActionLink("List Roles", "Index")| @*@Html.ActionLink("Manage User Role", "ManageUserRoles")*@
+            @Html.ActionLink("Add Role", "AddRole")|
+            @Html.ActionLink("Add user to role", "AddUserToRole")|
+            @Html.ActionLink("Users in role", "UsersInRole")|
+            @Html.ActionLink("Users in role", "UsersInRole")|
+            <hr />
+
+            @using (Html.BeginForm("AddRole", "Roles", FormMethod.Post, new { onsubmit = "return SubmitForm(this)" }))
+            {
+                <div>
+                    Role name
+                </div>
+                <p>
+                    @Html.TextBox("Name")
+                </p>
+                <div>
+                    @ViewBag.Result
+                </div>
+                <div class="form-group">
+
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                    <input type="reset" value="Reset" class="btn btn-warning" />
+                </div>
+
+            }
+        </div>
+    </div>
+    </div>
+
