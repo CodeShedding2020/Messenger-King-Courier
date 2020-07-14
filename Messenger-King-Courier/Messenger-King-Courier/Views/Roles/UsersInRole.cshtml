@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Messenger_King_Courier.Models.UsersView>
+
+@{
+    ViewBag.Title = "Roles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="margin-left:3%; margin-bottom:5%">
+    <h2 class="title text-center">Users In Role</h2>
+
+    @using (Html.BeginForm("UsersInRole", "Roles"))
+    {
+        <div class="form-group">
+            <div class="col-md-5">
+                Select Role: @Html.DropDownList("Id", (IEnumerable<SelectListItem>)@ViewBag.Roles, "Select Role")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-5">
+                @ViewBag.Result
+                @ViewBag.Feed
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-5">
+                <input type="submit" value="Find Users" class="btn btn-primary" />
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+
+        <hr />
+
+        <br />
+        <br />
+
+        <div class="form-group">
+            <div class="col-md-5">
+                @ViewBag.Count
+            </div>
+        </div>
+
+        <hr />
+    }
+
+    @if (Model != null)
+    {
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>Action</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Unassign", "UnassignUsersInRole", new { userId = item.UserId },
+                             new { onclick = "return confirm('Are you sure you wish to unassign?');" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+    </div>

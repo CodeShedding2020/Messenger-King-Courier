@@ -1,0 +1,142 @@
+﻿@model IEnumerable<Messenger_King_Courier.Models.RolesView>
+
+@{
+    ViewBag.Title = "Role";
+}
+<hr />
+<div style="margin-left:3%; margin-bottom:5%">
+    @Html.ActionLink("Create New Role", "AddRole")
+    <hr />
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Hover Data Table</h3>
+                </div>
+                <div class="box-body">
+                    <table class="table table-hover table-striped" id="my_list">
+                        <thead>
+                            <tr class="table-header-row">
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </th>
+
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+
+                                </tr>
+                            }
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    @section scripts{
+        <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+
+        <script>
+            var popup, dataTable;
+            //$(document).ready(function () {
+            //    dataTable = $("#employeeTable").DataTable({
+            //        "ajax": {
+            //            "url": "/Employee/GetData",
+            //            "type": "GET",
+            //            "datatype": "json"
+            //        },
+            //        "columns": [
+            //            { "data": "Name" },
+            //            { "data": "Position" },
+            //            { "data": "Office" },
+            //            { "data": "Age" },
+            //            { "data": "Salary" },
+            //        ],
+            //        "language": {
+            //            "emptyTable": "No data found, Please click on <b>Add New</b> button."
+            //        }
+            //    });
+            //});
+
+
+            function PopupForm(url) {
+                var formDiv = $('<div/>');
+                $.get(url)
+                    .done(function (response) {
+                        formDiv.html(response);
+
+                        popup = formDiv.dialog({
+                            resizable: false,
+                            autoOpen: true,
+                            title: 'Add New Role',
+                            height: 500,
+                            width: 700,
+                            close: function () {
+                                pop.dialog('destroy').remove();
+                            }
+                        });
+
+                    });
+            }
+
+            function SubmitForm(form) {
+
+                $.validator.unobtrusive.parse(form);
+                if ($(form).valid()) {
+                    $.ajax({
+                        type: "POST",
+                        url: form.action,
+                        data: $(form).serialize(),
+                        success: function (data) {
+                            if (data.success) {
+                                popup.dialog('close');
+                                dataTable.ajax.reload();
+
+                                $.notify(data.message, {
+                                    globalPosition: "top center",
+                                    className: "success"
+                                })
+
+                            }
+                        }
+
+                    });
+                }
+                return false;
+            }
+
+
+        </script>
+    }
+    <script type="text/javascript">
+        $('#my_list').dataTable(
+            {
+                dom: 'Bfrtip',
+                lengthMenu: [
+                    [10, 25, 50, -1],
+                    ['10 rows', '25 rows', '50 rows', 'Show all']
+                ],
+                buttons: [
+                    'pageLength', 'pdf', 'print'
+                ]
+            }
+        );
+        $('#my_list')
+            .removeClass('display')
+            .addClass('table table-striped table-hover');
+    </script>
+    </div>

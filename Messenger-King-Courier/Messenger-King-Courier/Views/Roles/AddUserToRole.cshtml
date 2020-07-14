@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Role";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}<div style="margin-left:3%; margin-bottom:5%">
+
+    <h2 class="title text-center">Assign User A Role</h2>
+
+    <hr />
+    @using (Html.BeginForm("AddUserToRole", "Roles"))
+
+    {
+
+        <div class="form-horizontal">
+            <div class="form-group">
+                <div class="col-md-5">
+                    Select User: @Html.DropDownList("Id", (IEnumerable<SelectListItem>)ViewBag.Users, "Select User")
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-5">
+                    Select Role: @Html.DropDownList("Name", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select Role")
+                </div>
+            </div>
+
+            <div>
+                @ViewBag.Result
+            </div>
+
+
+            <hr />
+
+            <p>
+
+                @Html.AntiForgeryToken()
+                <div class="form-actions">
+                    <input type="submit" value="Assign Role" class="btn btn-primary" />
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            </p>
+            <hr />
+
+
+        </div>
+    }
+
+
+    </div>

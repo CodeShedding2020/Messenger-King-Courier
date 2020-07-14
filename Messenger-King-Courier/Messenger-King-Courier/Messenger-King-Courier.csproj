@@ -256,6 +256,8 @@
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\QuotesController.cs" />
     <Compile Include="Controllers\RatesController.cs" />
+    <Compile Include="Controllers\RolesBusiness.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\TrackingCategoriesController.cs" />
     <Compile Include="Controllers\TrackingsController.cs" />
     <Compile Include="Controllers\VehiclesController.cs" />
@@ -264,6 +266,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationRole.cs" />
     <Compile Include="Models\AppLogic\AccountingLogic.cs" />
     <Compile Include="Models\AppModels\AccountCategory.cs" />
     <Compile Include="Models\AppModels\Bank.cs" />
@@ -283,10 +286,13 @@
     <Compile Include="Models\AppModels\Tracking.cs" />
     <Compile Include="Models\AppModels\TrackingCategory.cs" />
     <Compile Include="Models\AppModels\Vehicle.cs" />
+    <Compile Include="Models\IApplicationUser.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\AppModels\Invoice.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\AppModels\Order.cs" />
+    <Compile Include="Models\RolesView.cs" />
+    <Compile Include="Models\UsersView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -440,6 +446,12 @@
     <Content Include="Views\Quotes\Details.cshtml" />
     <Content Include="Views\Quotes\Edit.cshtml" />
     <Content Include="Views\Quotes\Index.cshtml" />
+    <Content Include="Views\Roles\AddRole.cshtml" />
+    <Content Include="Views\Roles\AddUserToRole.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Roles\RemoveFromRole.cshtml" />
+    <Content Include="Views\Roles\RolesForThisUser.cshtml" />
+    <Content Include="Views\Roles\UsersInRole.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

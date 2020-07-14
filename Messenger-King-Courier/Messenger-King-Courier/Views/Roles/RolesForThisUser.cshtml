@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Messenger_King_Courier.Models.RolesView>
+
+@{
+    ViewBag.Title = "Roles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="margin-left:3%; margin-bottom:5%">
+    <h2 class="title text-center">Get Roles For A User</h2>
+
+    <hr />
+    @using (Html.BeginForm("RolesForThisUser", "Roles"))
+    {
+        <div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-md-5">
+                        Select User: @Html.DropDownList("Id", (IEnumerable<SelectListItem>)ViewBag.Users, "Select User")
+                    </div>
+                </div>
+
+                <div>
+                    @ViewBag.Result
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        @*<input type="submit" value="Get Roles" class="btn btn-default" />*@
+                        <input id="btnSubmit" type="submit" value="Get Roles" class="btn btn-primary" />
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+
+    @ViewBag.Feed
+
+    <hr />
+    @ViewBag.Count
+    <hr />
+
+    @if (Model != null)
+
+    {
+        <table class="table">
+            <tr>
+                <th>
+                    Role @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>Actions</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <ul>
+                            <li>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        @Html.ActionLink("Unassign", "RemoveFromRole", new { id = item.Name }, new { onclick = "return confirm('Are you sure you wish to unassign?');" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+    </div>

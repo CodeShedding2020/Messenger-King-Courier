@@ -50,5 +50,10 @@ namespace Messenger_King_Courier.Models
         {
             return new ApplicationDbContext();
         }
+
+        //Role Management
+        public DbSet<IdentityUserRole> UserInRole { get; set; }
+        // public DbSet<ApplicationUser> appUsers { get; set; }
+        public DbSet<ApplicationRole> appRoles { get; set; }
     }
 }
