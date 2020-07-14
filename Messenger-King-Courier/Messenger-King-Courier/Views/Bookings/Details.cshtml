@@ -1,90 +1,314 @@
 ﻿@model Messenger_King_Courier.Models.AppModels.Booking
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Messenger King - Booking";
+    Layout = null;
 }
 
-<h2>Details</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Messenger King - Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Bakery In Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-<div>
-    <h4>Booking</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Quote.Quote_PickupAddress)
-        </dt>
+    <link href="~/LayOuts/FullSite Files/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" /><!-- bootstrap css -->
+    <link href="~/LayOuts/FullSite Files/css/style.css" rel="stylesheet" type="text/css" media="all" />
 
-        <dd>
-            @Html.DisplayFor(model => model.Quote.Quote_PickupAddress)
-        </dd>
+    <link href="~/LayOuts/FullSite Files/css/font-awesome.css" rel="stylesheet"> <!-- fontawesome css -->
+    <!--fonts-->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <!--//fonts-->
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Book_PickupDate)
-        </dt>
+</head>
+<body>
 
-        <dd>
-            @Html.DisplayFor(model => model.Book_PickupDate)
-        </dd>
+    <!-- header -->
+    <div class="header">
+        <div class="content white">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand">
+                            <h1>@Html.ActionLink("Messenger King", "Index", "Home")</h1>
+                        </a>
+                    </div>
+                    <!--/.navbar-header-->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <nav>
+                            <ul class="nav navbar-nav">
+                                <li><a @Html.ActionLink("Home", "Index", "Home") </a></li>
+                                <li><a @Html.ActionLink("Booking", "Create", "Bookings") </a></li>
+                                <li><a @Html.ActionLink("Tracking", "Create", "Trackings") </a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Orders <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a @Html.ActionLink("Get Quote", "Create", "Quotes") </a></li>
+                                        <li class="divider"></li>
+                                        <li><a @Html.ActionLink("Manage Orders", "Create", "Orders") </a></li>
+                                    </ul>
+                                </li>
+                                <li><a @Html.ActionLink("Contact Us", "Contact", "Home") </a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="active" data-toggle="dropdown">Profile <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a @Html.ActionLink("Login", "Login", "Account")  </a></li>
+                                        <li class="divider"></li>
+                                        <li><a @Html.ActionLink("Register", "Register", "Account") </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!--/.navbar-collapse-->
+                    <!--/.navbar-->
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- //header -->
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Book_DeliveryDate)
-        </dt>
+    <h2>Details</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.Book_DeliveryDate)
-        </dd>
+    <div>
+        <h4>Booking</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Quote.Quote_PickupAddress)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Book_RecipientName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Quote.Quote_PickupAddress)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Book_RecipientName)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Book_PickupDate)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Book_RecipientSurname)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Book_PickupDate)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Book_RecipientSurname)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Book_DeliveryDate)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Book_RecipientNumber)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Book_DeliveryDate)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Book_RecipientNumber)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Book_RecipientName)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Book_DeliveryNote)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Book_RecipientName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Book_DeliveryNote)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Book_RecipientSurname)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Book_TotalCost)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Book_RecipientSurname)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Book_TotalCost)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Book_RecipientNumber)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BookStatus)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Book_RecipientNumber)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.BookStatus)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Book_DeliveryNote)
+            </dt>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Book_ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+            <dd>
+                @Html.DisplayFor(model => model.Book_DeliveryNote)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Book_TotalCost)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Book_TotalCost)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BookStatus)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BookStatus)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Book_ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="w3_agile_footer_grids">
+                <ul class="col-md-3 col-xs-6 w3_agile_footer_grid right">
+                    <h3>Opening Hours</h3>
+                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Monday <span>8:00 - 17:00</span></li>
+                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Tuesday <span>8:00 - 17:00</span></li>
+                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Wednesday <span>8:00 - 17:00</span></li>
+                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Thursday <span>8:00 - 17:00</span></li>
+                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Friday <span>8:00 - 17:00</span></li>
+                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Weekends <span>Closed</span></li>
+                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Public Holidays <span>Closed</span></li>
+                </ul>
+                <div class="col-md-3 col-xs-6 w3_agile_footer_grid">
+                    <h3>Navigation</h3>
+                    <ul class="agileits_w3layouts_footer_grid_list">
+                        <li>
+                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                            <a @Html.ActionLink("Home", "Index", "Home") </a>
+                        </li>
+                        <li>
+                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                            <a @Html.ActionLink("Booking", "Create", "Bookings") </a>
+                        </li>
+                        <li>
+                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                            <a @Html.ActionLink("Tracking", "Create", "Trackings") </a>
+                        </li>
+                        <li>
+                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                            <a @Html.ActionLink("Orders", "Index", "Home") <b></a></b><br>
+                            <a @Html.ActionLink("-Get Quote", "Create", "Quotes") </a><br>
+                            <a @Html.ActionLink("-Manage Orders", "Create", "Orders") </a>
+                        </li>
+                        <li>
+                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                            <a @Html.ActionLink("Contact Us", "Contact", "Home") </a>
+                        </li>
+                        <li>
+                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                            <a @Html.ActionLink("Profile", "Index", "Home") <b></a></b><br>
+                            <a @Html.ActionLink("-Login", "Login", "Account") </a><br>
+                            <a @Html.ActionLink("-Register", "Register", "Account") </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-xs-6 w3ls_address_mail_footer_grids w3_agile_footer_grid">
+                    <h3>Contact Us</h3>
+                    <div class="w3ls_footer_grid_left">
+                        <div class="w3l-icon">
+                            <span class="fa fa-map-marker" aria-hidden="true"></span>
+                        </div>
+                        <p>
+                            32 Marshall Drive, Mount Edgecomb, Durban, 4302
+                        </p>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="w3ls_footer_grid_left">
+                        <div class="w3l-icon">
+                            <span class="fa fa-phone" aria-hidden="true"></span>
+                        </div>
+                        <p>
+                            +031 566 1604
+                        </p>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="w3ls_footer_grid_left">
+                        <div class="w3l-icon">
+                            <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                        </div>
+                        <p>
+                            <a href="mailto:info@messengerking.co.za">info@messengerking.co.za</a>
+                        </p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+                <div class="clearfix"> </div>
+            </div>
+            <div class="agileinfo_copyright">
+                <p>
+                    © 2020 Messenger King. All Rights Reserved | Design by CodeShedding Inc.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- //footer -->
+    <!-- Supportive js -->
+    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/jquery-2.1.4.min.js"></script>
+    <!-- //Supportive js -->
+    <!-- banner bottom video script -->
+    <script src="~/LayOuts/FullSite Files/js/simplePlayer.js"></script>
+    <script>
+				$("document").ready(function() {
+					$("#video").simplePlayer();
+				});
+    </script>
+    <!-- //banner bottom video script -->
+    <!-- testimonials plugin script -->
+    <script src="~/LayOuts/FullSite Files/js/jquery.wmuSlider.js"></script>
+    <script>
+		$('.example1').wmuSlider();
+    </script>
+    <!-- testimonials plugin script -->
+    <!-- smooth scrolling js -->
+    <script src="~/LayOuts/FullSite Files/js/SmoothScroll.min.js"></script>
+    <!-- smooth scrolling js -->
+    <!-- start-smooth-scrolling -->
+    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/move-top.js"></script>
+    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/easing.js"></script>
+    <script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+    </script>
+
+    <!-- here starts scrolling icon -->
+    <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+			});
+    </script>
+    <!-- //here ends scrolling icon -->
+    <!-- move to top-js-files -->
+    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/move-top.js"></script>
+    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/easing.js"></script>
+    <!-- //move to top-js-files -->
+
+    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/bootstrap.js"></script><!-- bootstrap js file -->
+
+</body>
+</html>
+

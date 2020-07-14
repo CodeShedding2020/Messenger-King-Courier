@@ -1,31 +1,325 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Messenger King - Home ";
+    Layout = null;
 }
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Messenger King - Home </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Bakery In Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    <link href="~/LayOuts/FullSite Files/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" /><!-- bootstrap css -->
+    <link href="~/LayOuts/FullSite Files/css/style.css" rel="stylesheet" type="text/css" media="all" />
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <link href="~/LayOuts/FullSite Files/css/font-awesome.css" rel="stylesheet"> <!-- fontawesome css -->
+    <!--fonts-->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <!--//fonts-->
+
+</head>
+<body>
+
+    <!-- header -->
+    <div class="header" id="home">
+        <div class="content white">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <h1>@Html.ActionLink("Messenger King", "Index", "Home")</h1>
+                        </a>
+                    </div>
+                    <!--/.navbar-header-->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <nav>
+                            <ul class="nav navbar-nav">
+                                <li><a class="active" @Html.ActionLink("Home", "Index", "Home") </a></li>
+                                <li><a @Html.ActionLink("Booking", "Create", "Bookings") </a></li>
+                                <li><a @Html.ActionLink("Tracking", "Create", "Trackings") </a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Orders <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a @Html.ActionLink("Get Quote", "Create", "Quotes") </a></li>
+                                        <li class="divider"></li>
+                                        <li><a @Html.ActionLink("Manage Orders", "Create", "Orders") </a></li>
+                                    </ul>
+                                </li>
+                                <li><a @Html.ActionLink("Contact Us", "Contact", "Home") </a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a @Html.Partial("_LoginPartial") </a></li>
+                                        <li class="divider"></li>
+                                        <li><a @Html.ActionLink("Register", "Register", "Account") </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!--/.navbar-collapse-->
+                    <!--/.navbar-->
+                </div>
+            </nav>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <!-- //header -->
+    <!-- banner slider -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+            <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+            <li data-target="#myCarousel" data-slide-to="3" class=""></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <div class="col-md-6 slider_left">
+                            <h2>We Offer, <span>Fast and Reliable Delivery.</span></h2>
+                            <p>Messenger Kings is a 100% black owned and managed enterprise, offering a reliable prompt and affordable courier service.</p>
+                        </div>
+                        <div class="col-md-6 slider_right">
+                            <img src="~/LayOuts/FullSite Files/images/106-1061289_red-crown-png-transparent-red-kings-crown-clipart.png" alt="cake1" />
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="item item2">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <div class="col-md-6 slider_left">
+                            <h3>We Offer, <span> Delivery of a Wide Range of Parcels at your convieniance.</span></h3>
+                            <p>Messenger Kings is a 100% black owned and managed enterprise, offering a reliable prompt and affordable courier service.</p>
+                        </div>
+                        <div class="col-md-6 slider_right">
+                            <img src="~/LayOuts/FullSite Files/images/106-1061289_red-crown-png-transparent-red-kings-crown-clipart.png" alt="cake1" />
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="item item3">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <div class="col-md-6 slider_left">
+                            <h3>We Offer, <span>Customer fulfilment with every Parcel.</span></h3>
+                            <p>Messenger Kings is a 100% black owned and managed enterprise, offering a reliable prompt and affordable courier service.</p>
+                        </div>
+                        <div class="col-md-6 slider_right">
+                            <img src="~/LayOuts/FullSite Files/images/106-1061289_red-crown-png-transparent-red-kings-crown-clipart.png" alt="cake1" />
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="item item4">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <div class="col-md-6 slider_left">
+                            <h3>We Offer, <span>Affordable prices and Quick Turn Around Time.</span></h3>
+                            <p>Messenger Kings is a 100% black owned and managed enterprise, offering a reliable prompt and affordable courier service.</p>
+                        </div>
+                        <div class="col-md-6 slider_right">
+                            <img src="~/LayOuts/FullSite Files/images/106-1061289_red-crown-png-transparent-red-kings-crown-clipart.png" alt="cake1" />
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="fa fa-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="fa fa-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <!-- The Modal -->
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <!-- //banner slider -->
+    <!-- welcome -->
+    <div class="welcome">
+        <div class="container">
+            <div class="col-md-6 welcome-w3lright">
+                <div class="video-grid-single-page-agileits">
+                    <div data-video="qvtjaAW3m-E" id="video"> <img src="~/LayOuts/FullSite Files/images/102858806 (1).jpg" alt="" class="img-responsive" /> </div>
+                </div>
+            </div>
+            <div class="col-md-6 welcome_left">
+                <h3 class="agileits-title">The Best in the Business...</h3>
+                <h4>Messenger King is a Proudly South African Courier and Shipping Services Organisation founded in 1996 by Roger Governder in the Province of Kwa-Zulu Natal</h4>
+                <p>Try us out, get A Quote Now!</p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
     </div>
-</div>
+    <!-- //welcome -->
+    <!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="w3_agile_footer_grids">
+                <ul class="col-md-3 col-xs-6 w3_agile_footer_grid right">
+                    <h3>Opening Hours</h3>
+                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Monday <span>8:00 - 17:00</span></li>
+                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Tuesday <span>8:00 - 17:00</span></li>
+                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Wednesday <span>8:00 - 17:00</span></li>
+                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Thursday <span>8:00 - 17:00</span></li>
+                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Friday <span>8:00 - 17:00</span></li>
+                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Weekends <span>Closed</span></li>
+                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Public Holidays <span>Closed</span></li>
+                </ul>
+                <div class="col-md-3 col-xs-6 w3_agile_footer_grid">
+                    <h3>Navigation</h3>
+                    <ul class="agileits_w3layouts_footer_grid_list">
+                        <li>
+                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                            <a @Html.ActionLink("Home", "Index", "Home") </a>
+                        </li>
+                        <li>
+                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                            <a @Html.ActionLink("Booking", "Create", "Bookings") </a>
+                        </li>
+                        <li>
+                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                            <a @Html.ActionLink("Tracking", "Create", "Trackings") </a>
+                        </li>
+                        <li>
+                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                            <a @Html.ActionLink("Orders", "Index", "Home") <b></a></b><br>
+                            <a @Html.ActionLink("-Get Quote", "Create", "Quotes") </a><br>
+                            <a @Html.ActionLink("-Manage Orders", "Create", "Orders") </a>
+                        </li>
+                        <li>
+                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                            <a @Html.ActionLink("Contact Us", "Contact", "Home") </a>
+                        </li>
+                        <li>
+                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                            <a @Html.ActionLink("Profile", "Index", "Home") <b></a></b><br>
+                            <a @Html.ActionLink("-Login", "Login", "Account") </a><br>
+                            <a @Html.ActionLink("-Register", "Register", "Account") </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-xs-6 w3ls_address_mail_footer_grids w3_agile_footer_grid">
+                    <h3>Contact Us</h3>
+                    <div class="w3ls_footer_grid_left">
+                        <div class="w3l-icon">
+                            <span class="fa fa-map-marker" aria-hidden="true"></span>
+                        </div>
+                        <p>
+                            32 Marshall Drive, Mount Edgecomb, Durban, 4302
+                        </p>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="w3ls_footer_grid_left">
+                        <div class="w3l-icon">
+                            <span class="fa fa-phone" aria-hidden="true"></span>
+                        </div>
+                        <p>
+                            +031 566 1604
+                        </p>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="w3ls_footer_grid_left">
+                        <div class="w3l-icon">
+                            <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                        </div>
+                        <p>
+                            <a href="mailto:info@messengerking.co.za">info@messengerking.co.za</a>
+                        </p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+                <div class="clearfix"> </div>
+            </div>
+            <div class="agileinfo_copyright">
+                <p>
+                    © 2020 Messenger King. All Rights Reserved | Design by CodeShedding Inc.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- //footer -->
+    <!-- Supportive js -->
+    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/jquery-2.1.4.min.js"></script>
+    <!-- //Supportive js -->
+    <!-- banner bottom video script -->
+    <script src="~/LayOuts/FullSite Files/js/simplePlayer.js"></script>
+    <script>
+				$("document").ready(function() {
+					$("#video").simplePlayer();
+				});
+    </script>
+    <!-- //banner bottom video script -->
+    <!-- testimonials plugin script -->
+    <script src="~/LayOuts/FullSite Files/js/jquery.wmuSlider.js"></script>
+    <script>
+		$('.example1').wmuSlider();
+    </script>
+    <!-- testimonials plugin script -->
+    <!-- smooth scrolling js -->
+    <script src="~/LayOuts/FullSite Files/js/SmoothScroll.min.js"></script>
+    <!-- smooth scrolling js -->
+    <!-- start-smooth-scrolling -->
+    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/move-top.js"></script>
+    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/easing.js"></script>
+    <script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+    </script>
+
+    <!-- here starts scrolling icon -->
+    <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+			});
+    </script>
+    <!-- //here ends scrolling icon -->
+    <!-- move to top-js-files -->
+    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/move-top.js"></script>
+    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/easing.js"></script>
+    <!-- //move to top-js-files -->
+
+    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/bootstrap.js"></script><!-- bootstrap js file -->
+
+</body>
+</html>
