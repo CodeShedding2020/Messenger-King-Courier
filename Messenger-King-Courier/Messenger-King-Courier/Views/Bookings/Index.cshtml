@@ -12,6 +12,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Client.Client_IDNo)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Quote.Quote_PickupAddress)
         </th>
         <th>
@@ -32,17 +35,14 @@
         <th>
             @Html.DisplayNameFor(model => model.Book_DeliveryNote)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Book_TotalCost)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BookStatus)
-        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.Client_IDNo)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Quote.Quote_PickupAddress)
         </td>
@@ -63,12 +63,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Book_DeliveryNote)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Book_TotalCost)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BookStatus)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Book_ID }) |

@@ -11,6 +11,14 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.Client.Client_IDNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client.Client_IDNo)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Quote.Quote_PickupAddress)
         </dt>
 
@@ -64,22 +72,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Book_DeliveryNote)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Book_TotalCost)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Book_TotalCost)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BookStatus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BookStatus)
         </dd>
 
     </dl>

@@ -51,6 +51,10 @@ namespace Messenger_King_Courier.Controllers
         {
             if (ModelState.IsValid)
             {
+                ClientCategoryCopy copy = new ClientCategoryCopy();
+
+                copy.ClientCategoryCopy_Type = clientCategory.ClientCat_Type;
+                db.ClientCategoryCopies.Add(copy);
                 db.ClientCategories.Add(clientCategory);
                 db.SaveChanges();
                 return RedirectToAction("Index");

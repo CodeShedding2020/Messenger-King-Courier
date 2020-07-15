@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Messenger_King_Courier.Model;
+using Microsoft.Owin.Security;
+
 using Messenger_King_Courier.Models;
+using Messenger_King_Courier.Model;
 using Messenger_King_Courier.ViewModels;
 
-namespace Messenger_King_Courier.BusinessLogic
+namespace Messenger_King_Courier.Controllers
 {
     public class RolesBusiness
     {
@@ -58,7 +62,7 @@ namespace Messenger_King_Courier.BusinessLogic
 
         public List<UsersView> UsersInRole(string roleId)
         {
-          
+
             var role = con.Roles.ToList().Where(predicate: x => x.Name == roleId).FirstOrDefault();
 
             var list = con.UserInRole.ToList().Where(predicate: x => x.RoleId == role.Id).ToList();

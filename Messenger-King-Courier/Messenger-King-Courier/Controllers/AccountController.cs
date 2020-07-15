@@ -156,8 +156,7 @@ namespace Messenger_King_Courier.Controllers
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
 
-                UserManager.AddToRole(user.Id, "Client");
-
+                UserManager.AddToRole(user.Id,"Client");
                 Client client = new Client();
                 client.Client_ID = user.Id;
                 applicationDb.Clients.Add(client);

@@ -46,6 +46,7 @@ namespace Messenger_King_Courier.Models.AppModels
 
         [StringLength(250, MinimumLength = 2, ErrorMessage = "The Delivery Note should be between 2 - 250 Characters")]
         [DisplayName("Delivery Note")]
+        [DataType(DataType.MultilineText)]
         public string Book_DeliveryNote { get; set; }
        
         [DisplayName("Total Cost")]
@@ -53,11 +54,16 @@ namespace Messenger_King_Courier.Models.AppModels
         public double Book_TotalCost { get; set; }
 
         [ScaffoldColumn(false)]
-        public bool BookStatus { get; set; } 
+        public bool BookStatus { get; set; }
 
+        [ScaffoldColumn(false)]
         public int Quote_ID { get; set; }
         public virtual Quote Quote { get; set; }
-        
+
+        [ScaffoldColumn(false)]
+        public string Client_ID { get; set; }
+        public virtual Client Client { get; set; }
+
         public virtual List<Order> Order { get; set; }
 
     }

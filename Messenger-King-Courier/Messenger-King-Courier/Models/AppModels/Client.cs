@@ -11,6 +11,7 @@ namespace Messenger_King_Courier.Models.AppModels
         public string Client_ID { get; set; }
 
         [Required(ErrorMessage = "ID number is required")]
+        [StringLength(13, MinimumLength = 13, ErrorMessage = "This field must be 8 characters")]
         [DisplayName("ID number")]
         public string Client_IDNo { get; set; }
 
@@ -44,6 +45,7 @@ namespace Messenger_King_Courier.Models.AppModels
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
           ErrorMessage = "Entered tellephone number format is not valid.")]
         public string Client_Tellnum { get; set; }
+
 
         public int ClientCat_ID { get; set; }
         public virtual ClientCategory ClientCategory { get; set; }

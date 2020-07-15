@@ -8,7 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using Messenger_King_Courier.Models;
 using Messenger_King_Courier.Models.AppModels;
-using Microsoft.AspNet.Identity;
 
 namespace Messenger_King_Courier.Controllers
 {
@@ -88,8 +87,6 @@ namespace Messenger_King_Courier.Controllers
         {
             if (ModelState.IsValid)
             {
-                var uid = User.Identity.GetUserId();
-                client.Client_ID = uid;
                 db.Entry(client).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

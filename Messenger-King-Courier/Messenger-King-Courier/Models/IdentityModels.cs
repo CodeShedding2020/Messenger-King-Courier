@@ -32,6 +32,7 @@ namespace Messenger_King_Courier.Models
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<ClientCategory> ClientCategories { get; set; }
+        public DbSet<ClientCategoryCopy> ClientCategoryCopies { get; set; }
         public DbSet<Document> Documents { get; set; }
         public DbSet<Driver> Drivers { get; set; }
         public DbSet<Inspection> Inspections { get; set; }
@@ -45,15 +46,15 @@ namespace Messenger_King_Courier.Models
         public DbSet<Tracking> Trackings { get; set; }
         public DbSet<TrackingCategory> TrackingCategories { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
-
+        //Role Management
+        public DbSet<IdentityUserRole> UserInRole { get; set; }
+        // public DbSet<ApplicationUser> appUsers { get; set; }
+        public DbSet<ApplicationRole> appRoles { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
 
-        //Role Management
-        public DbSet<IdentityUserRole> UserInRole { get; set; }
-        // public DbSet<ApplicationUser> appUsers { get; set; }
-        public DbSet<ApplicationRole> appRoles { get; set; }
+  
     }
 }

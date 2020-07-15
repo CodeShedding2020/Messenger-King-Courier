@@ -8,7 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using Messenger_King_Courier.Models;
 using Messenger_King_Courier.Models.AppModels;
-using Microsoft.AspNet.Identity;
 
 namespace Messenger_King_Courier.Controllers
 {
@@ -19,7 +18,7 @@ namespace Messenger_King_Courier.Controllers
         // GET: Bookings
         public ActionResult Index()
         {
-            var bookings = db.Bookings.Include(b => b.Quote);
+            var bookings = db.Bookings.Include(b => b.Client).Include(b => b.Quote);
             return View(bookings.ToList());
         }
 
@@ -39,10 +38,9 @@ namespace Messenger_King_Courier.Controllers
         }
 
         // GET: Bookings/Create
-        public ActionResult Create(int?id)
+        public ActionResult Create()
         {
-            Booking booking = new Booking();
-            booking.Quote_ID = (int)id;
+            ViewBag.Client_ID = new SelectList(db.Clients, "Client_ID", "Client_IDNo");
             ViewBag.Quote_ID = new SelectList(db.Quotes, "Quote_ID", "Quote_PickupAddress");
             return View();
         }
@@ -52,17 +50,16 @@ namespace Messenger_King_Courier.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Book_ID,Book_PickupDate,Book_DeliveryDate,Book_RecipientName,Book_RecipientSurname,Book_RecipientNumber,Book_DeliveryNote,Book_TotalCost,BookStatus,Quote_ID")] Booking booking)
+        public ActionResult Create([Bind(Include = "Book_ID,Book_PickupDate,Book_DeliveryDate,Book_RecipientName,Book_RecipientSurname,Book_RecipientNumber,Book_DeliveryNote,Book_TotalCost,BookStatus,Quote_ID,Client_ID")] Booking booking)
         {
             if (ModelState.IsValid)
             {
-                var uid = User.Identity.GetUserId();
-              
                 db.Bookings.Add(booking);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
+            ViewBag.Client_ID = new SelectList(db.Clients, "Client_ID", "Client_IDNo", booking.Client_ID);
             ViewBag.Quote_ID = new SelectList(db.Quotes, "Quote_ID", "Quote_PickupAddress", booking.Quote_ID);
             return View(booking);
         }
@@ -79,6 +76,7 @@ namespace Messenger_King_Courier.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Client_ID = new SelectList(db.Clients, "Client_ID", "Client_IDNo", booking.Client_ID);
             ViewBag.Quote_ID = new SelectList(db.Quotes, "Quote_ID", "Quote_PickupAddress", booking.Quote_ID);
             return View(booking);
         }
@@ -88,7 +86,7 @@ namespace Messenger_King_Courier.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Book_ID,Book_PickupDate,Book_DeliveryDate,Book_RecipientName,Book_RecipientSurname,Book_RecipientNumber,Book_DeliveryNote,Book_TotalCost,BookStatus,Quote_ID")] Booking booking)
+        public ActionResult Edit([Bind(Include = "Book_ID,Book_PickupDate,Book_DeliveryDate,Book_RecipientName,Book_RecipientSurname,Book_RecipientNumber,Book_DeliveryNote,Book_TotalCost,BookStatus,Quote_ID,Client_ID")] Booking booking)
         {
             if (ModelState.IsValid)
             {
@@ -96,6 +94,7 @@ namespace Messenger_King_Courier.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.Client_ID = new SelectList(db.Clients, "Client_ID", "Client_IDNo", booking.Client_ID);
             ViewBag.Quote_ID = new SelectList(db.Quotes, "Quote_ID", "Quote_PickupAddress", booking.Quote_ID);
             return View(booking);
         }

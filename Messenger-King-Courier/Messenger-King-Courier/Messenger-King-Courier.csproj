@@ -274,6 +274,7 @@
     <Compile Include="Models\AppModels\Booking.cs" />
     <Compile Include="Models\AppModels\Client.cs" />
     <Compile Include="Models\AppModels\ClientCategory.cs" />
+    <Compile Include="Models\AppModels\ClientCategoryCopy.cs" />
     <Compile Include="Models\AppModels\Document.cs" />
     <Compile Include="Models\AppModels\Driver.cs" />
     <Compile Include="Models\AppModels\Inspection.cs" />
@@ -406,11 +407,6 @@
     <Content Include="Views\AccountCategories\Details.cshtml" />
     <Content Include="Views\AccountCategories\Edit.cshtml" />
     <Content Include="Views\AccountCategories\Index.cshtml" />
-    <Content Include="Views\Clients\Create.cshtml" />
-    <Content Include="Views\Clients\Delete.cshtml" />
-    <Content Include="Views\Clients\Details.cshtml" />
-    <Content Include="Views\Clients\Edit.cshtml" />
-    <Content Include="Views\Clients\Index.cshtml" />
     <Content Include="Views\Trackings\Create.cshtml" />
     <Content Include="Views\Trackings\Delete.cshtml" />
     <Content Include="Views\Trackings\Details.cshtml" />
@@ -436,6 +432,17 @@
     <Content Include="Views\Invoices\Details.cshtml" />
     <Content Include="Views\Invoices\Edit.cshtml" />
     <Content Include="Views\Invoices\Index.cshtml" />
+    <Content Include="Views\Roles\AddRole.cshtml" />
+    <Content Include="Views\Roles\AddUserToRole.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Roles\RemoveFromRole.cshtml" />
+    <Content Include="Views\Roles\RolesForThisUser.cshtml" />
+    <Content Include="Views\Roles\UsersInRole.cshtml" />
+    <Content Include="Views\Clients\Create.cshtml" />
+    <Content Include="Views\Clients\Delete.cshtml" />
+    <Content Include="Views\Clients\Details.cshtml" />
+    <Content Include="Views\Clients\Edit.cshtml" />
+    <Content Include="Views\Clients\Index.cshtml" />
     <Content Include="Views\Bookings\Create.cshtml" />
     <Content Include="Views\Bookings\Delete.cshtml" />
     <Content Include="Views\Bookings\Details.cshtml" />
@@ -446,12 +453,6 @@
     <Content Include="Views\Quotes\Details.cshtml" />
     <Content Include="Views\Quotes\Edit.cshtml" />
     <Content Include="Views\Quotes\Index.cshtml" />
-    <Content Include="Views\Roles\AddRole.cshtml" />
-    <Content Include="Views\Roles\AddUserToRole.cshtml" />
-    <Content Include="Views\Roles\Index.cshtml" />
-    <Content Include="Views\Roles\RemoveFromRole.cshtml" />
-    <Content Include="Views\Roles\RolesForThisUser.cshtml" />
-    <Content Include="Views\Roles\UsersInRole.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

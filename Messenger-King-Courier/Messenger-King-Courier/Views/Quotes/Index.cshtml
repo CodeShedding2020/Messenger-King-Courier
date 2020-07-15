@@ -12,13 +12,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Client.Client_IDNo)
+            @Html.DisplayNameFor(model => model.ClientCategoryCopy.ClientCategoryCopy_Type)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Rate.Rate_ID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Quote_Date)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Quote_PickupAddress)
@@ -27,13 +24,7 @@
             @Html.DisplayNameFor(model => model.Quote_DeliveryAddress)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Quote_Distance)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Quote_Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Quote_Cost)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Item_Quantity)
@@ -50,19 +41,19 @@
         <th>
             @Html.DisplayNameFor(model => model.Quote_Weight)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quote_Status)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Client.Client_IDNo)
+            @Html.DisplayFor(modelItem => item.ClientCategoryCopy.ClientCategoryCopy_Type)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Rate.Rate_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Quote_Date)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Quote_PickupAddress)
@@ -71,13 +62,7 @@
             @Html.DisplayFor(modelItem => item.Quote_DeliveryAddress)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Quote_Distance)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Quote_Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Quote_Cost)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Item_Quantity)
@@ -93,6 +78,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Quote_Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quote_Status)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Quote_ID }) |

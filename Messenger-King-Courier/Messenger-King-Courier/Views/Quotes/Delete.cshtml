@@ -12,11 +12,11 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Client.Client_IDNo)
+            @Html.DisplayNameFor(model => model.ClientCategoryCopy.ClientCategoryCopy_Type)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Client.Client_IDNo)
+            @Html.DisplayFor(model => model.ClientCategoryCopy.ClientCategoryCopy_Type)
         </dd>
 
         <dt>
@@ -25,14 +25,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Rate.Rate_ID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Quote_Date)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Quote_Date)
         </dd>
 
         <dt>
@@ -52,27 +44,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Quote_Distance)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Quote_Distance)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Quote_Description)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Quote_Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Quote_Cost)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Quote_Cost)
         </dd>
 
         <dt>
@@ -113,6 +89,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.Quote_Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote_Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote_Status)
         </dd>
 
     </dl>

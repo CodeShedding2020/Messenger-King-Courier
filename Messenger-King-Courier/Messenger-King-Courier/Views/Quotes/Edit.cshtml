@@ -6,6 +6,7 @@
 
 <h2>Edit</h2>
 
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -15,14 +16,6 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Quote_ID)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Quote_Date, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Quote_Date, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Quote_Date, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Quote_PickupAddress, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -41,26 +34,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Quote_Distance, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Quote_Distance, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Quote_Distance, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.Quote_Description, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Quote_Description, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Quote_Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Quote_Cost, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Quote_Cost, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Quote_Cost, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -105,18 +82,20 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Client_ID, "Client_ID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Quote_Status, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("Client_ID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Client_ID, "", new { @class = "text-danger" })
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Quote_Status)
+                    @Html.ValidationMessageFor(model => model.Quote_Status, "", new { @class = "text-danger" })
+                </div>
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Rate_ID, "Rate_ID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ClientCategoryCopy_ID, "ClientCategoryCopy_ID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("Rate_ID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Rate_ID, "", new { @class = "text-danger" })
+                @Html.DropDownList("ClientCategoryCopy_ID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ClientCategoryCopy_ID, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -131,3 +110,7 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
