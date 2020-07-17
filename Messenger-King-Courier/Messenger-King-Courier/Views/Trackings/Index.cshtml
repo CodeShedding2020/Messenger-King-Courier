@@ -79,13 +79,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //header -->
-    <h2>Index</h2>
+    <center>
+        <h3 class="heading" style="color:white">Tracking</h3>
+    </center>
 
     <p>
-        @Html.ActionLink("Create New", "Create")
+        <a href='@Url.Action("Create", "Tracking")' class="btn btn-primary">Create</a>
     </p>
     <table class="table">
-        <tr>
+        <tr class="active">
             <th>
                 @Html.DisplayNameFor(model => model.Order.Order_ID)
             </th>
@@ -100,22 +102,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Order.Order_ID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Tracking_Category.TrackingCat_Status)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Track_Message)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Track_ID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Track_ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Track_ID })
-                </td>
-            </tr>
+    <tr class="info">
+        <td>
+            @Html.DisplayFor(modelItem => item.Order.Order_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tracking_Category.TrackingCat_Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Track_Message)
+        </td>
+        <td>
+            <a href='@Url.Action("Edit", "Trackings", new { id = item.Track_ID })' class="btn btn-success">Edit</a>|
+            <a href='@Url.Action("Details", "Trackings", new { id = item.Track_ID })' class="btn btn-primary">Details</a>|
+            <a href='@Url.Action("Delete", "Trackings", new { id = item.Track_ID})' class="btn btn-warning">Delete</a>|
+        </td>
+    </tr>
         }
 
     </table>
@@ -215,15 +217,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- banner bottom video script -->
     <script src="~/LayOuts/FullSite Files/js/simplePlayer.js"></script>
     <script>
-				$("document").ready(function() {
-					$("#video").simplePlayer();
-				});
+        $("document").ready(function () {
+            $("#video").simplePlayer();
+        });
     </script>
     <!-- //banner bottom video script -->
     <!-- testimonials plugin script -->
     <script src="~/LayOuts/FullSite Files/js/jquery.wmuSlider.js"></script>
     <script>
-		$('.example1').wmuSlider();
+        $('.example1').wmuSlider();
     </script>
     <!-- testimonials plugin script -->
     <!-- smooth scrolling js -->
@@ -233,29 +235,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="text/javascript" src="~/LayOuts/FullSite Files/js/move-top.js"></script>
     <script type="text/javascript" src="~/LayOuts/FullSite Files/js/easing.js"></script>
     <script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});
-	});
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
     </script>
 
     <!-- here starts scrolling icon -->
     <script type="text/javascript">
-		$(document).ready(function() {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear'
-				};
-			*/
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+            */
 
-			$().UItoTop({ easingType: 'easeOutQuart' });
+            $().UItoTop({ easingType: 'easeOutQuart' });
 
-			});
+        });
     </script>
     <!-- //here ends scrolling icon -->
     <!-- move to top-js-files -->

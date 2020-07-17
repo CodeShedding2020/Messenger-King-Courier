@@ -26,6 +26,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
     <!--//fonts-->
 
+    <link href="//fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet">
+    <!-- /fonts -->
+    <!-- css -->
+    <link href="~/LayOuts/RegSite Files/css/bootstrap.css" rel="stylesheet" type='text/css' media="all" />
+    <link href="~/LayOuts/RegSite Files/css/style.css" rel="stylesheet" type='text/css' media="all" />
+    <!-- /css -->
+
 </head>
 <body>
 
@@ -80,214 +87,211 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     <!-- //header -->
 
-    <h2>Edit</h2>
+    <center>
+        <h3 class="heading" style="color:white">Rate</h3>
+    </center>
 
+    <div class="content-agileits">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-horizontal">
-            <h4>Rate</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.Rate_ID)
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Base_Cost, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Base_Cost, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Base_Cost, "", new { @class = "text-danger" })
-                </div>
+            <div class="form-group w3layouts w3 w3l">
+                <label for="firstname" class="control-label">Base Cost: </label>
+                @Html.EditorFor(model => model.Base_Cost, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Base Cost" } })
+                @Html.ValidationMessageFor(model => model.Base_Cost, "", new { @class = "text-danger" })
+                <div class="help-block with-errors"></div>
             </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Rate_PerCM, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Rate_PerCM, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Rate_PerCM, "", new { @class = "text-danger" })
-                </div>
+            <div class="form-group w3layouts w3 w3l">
+                <label for="firstname" class="control-label">Rate Per CM(Centimeter) : </label>
+                @Html.EditorFor(model => model.Rate_PerCM, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Rate Per CM(Centimeter)" } })
+                @Html.ValidationMessageFor(model => model.Rate_PerCM, "", new { @class = "text-danger" })
+                <div class="help-block with-errors"></div>
             </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Rate_PerKG, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Rate_PerKG, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Rate_PerKG, "", new { @class = "text-danger" })
-                </div>
+            <div class="form-group w3layouts w3 w3l">
+                <label for="firstname" class="control-label">Rate_Per KG(Kilogram) : </label>
+                @Html.EditorFor(model => model.Rate_PerKG, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Rate_Per KG(Kilogram)" } })
+                @Html.ValidationMessageFor(model => model.Rate_PerKG, "", new { @class = "text-danger" })
+                <div class="help-block with-errors"></div>
             </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Rate_PerKM, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Rate_PerKM, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Rate_PerKM, "", new { @class = "text-danger" })
-                </div>
+            <div class="form-group w3layouts w3 w3l">
+                <label for="firstname" class="control-label">Rate Per KM(Kilomitre) : </label>
+                @Html.EditorFor(model => model.Rate_PerKM, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Rate Per KM(Kilomitre)" } })
+                @Html.ValidationMessageFor(model => model.Rate_PerKM, "", new { @class = "text-danger" })
+                <div class="help-block with-errors"></div>
             </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.ClientCat_ID, "ClientCat_ID", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("ClientCat_ID", null, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.ClientCat_ID, "", new { @class = "text-danger" })
-                </div>
+            <div class="form-group w3layouts w3 w3l">
+                <label for="firstname" class="control-label">Client Category ID : </label>
+                @Html.DropDownList("ClientCat_ID", null, htmlAttributes: new { @class = "form-control", @placeholder = "Select Client Category ID" })
+                @Html.ValidationMessageFor(model => model.ClientCat_ID, "", new { @class = "text-danger" })
+                <div class="help-block with-errors"></div>
             </div>
 
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
+            <center>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
                 </div>
-            </div>
-        </div>
-    }
-
-    <div>
-        @Html.ActionLink("Back to List", "Index")
+            </center>
+            <center>
+                <a href='@Url.Action("Index", "Rates")' class="btn btn-primary">Back to List</a>|
+            </center>
+        }
     </div>
 
-    <!-- footer -->
-    <div class="footer">
-        <div class="container">
-            <div class="w3_agile_footer_grids">
-                <ul class="col-md-3 col-xs-6 w3_agile_footer_grid right">
-                    <h3>Opening Hours</h3>
-                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Monday <span>8:00 - 17:00</span></li>
-                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Tuesday <span>8:00 - 17:00</span></li>
-                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Wednesday <span>8:00 - 17:00</span></li>
-                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Thursday <span>8:00 - 17:00</span></li>
-                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Friday <span>8:00 - 17:00</span></li>
-                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Weekends <span>Closed</span></li>
-                    <li><span class="fa fa-clock-o" aria-hidden="true"></span>Public Holidays <span>Closed</span></li>
-                </ul>
-                <div class="col-md-3 col-xs-6 w3_agile_footer_grid">
-                    <h3>Navigation</h3>
-                    <ul class="agileits_w3layouts_footer_grid_list">
-                        <li>
-                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                            <a @Html.ActionLink("Home", "Index", "Home") </a>
-                        </li>
-                        <li>
-                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                            <a @Html.ActionLink("Booking", "Create", "Bookings") </a>
-                        </li>
-                        <li>
-                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                            <a @Html.ActionLink("Tracking", "Create", "Trackings") </a>
-                        </li>
-                        <li>
-                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                            <a @Html.ActionLink("Orders", "Index", "Home") <b></a></b><br>
-                            <a @Html.ActionLink("-Get Quote", "Create", "Quotes") </a><br>
-                            <a @Html.ActionLink("-Manage Orders", "Create", "Orders") </a>
-                        </li>
-                        <li>
-                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                            <a @Html.ActionLink("Contact Us", "Contact", "Home") </a>
-                        </li>
-                        <li>
-                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                            <a @Html.ActionLink("Profile", "Index", "Home") <b></a></b><br>
-                            <a @Html.ActionLink("-Login", "Login", "Account") </a><br>
-                            <a @Html.ActionLink("-Register", "Register", "Account") </a>
-                        </li>
+       
+        <!-- footer -->
+        <div class="footer">
+            <div class="container">
+                <div class="w3_agile_footer_grids">
+                    <ul class="col-md-3 col-xs-6 w3_agile_footer_grid right">
+                        <h3>Opening Hours</h3>
+                        <li><span class="fa fa-clock-o" aria-hidden="true"></span>Monday <span>8:00 - 17:00</span></li>
+                        <li><span class="fa fa-clock-o" aria-hidden="true"></span>Tuesday <span>8:00 - 17:00</span></li>
+                        <li><span class="fa fa-clock-o" aria-hidden="true"></span>Wednesday <span>8:00 - 17:00</span></li>
+                        <li><span class="fa fa-clock-o" aria-hidden="true"></span>Thursday <span>8:00 - 17:00</span></li>
+                        <li><span class="fa fa-clock-o" aria-hidden="true"></span>Friday <span>8:00 - 17:00</span></li>
+                        <li><span class="fa fa-clock-o" aria-hidden="true"></span>Weekends <span>Closed</span></li>
+                        <li><span class="fa fa-clock-o" aria-hidden="true"></span>Public Holidays <span>Closed</span></li>
                     </ul>
-                </div>
-                <div class="col-md-3 col-xs-6 w3ls_address_mail_footer_grids w3_agile_footer_grid">
-                    <h3>Contact Us</h3>
-                    <div class="w3ls_footer_grid_left">
-                        <div class="w3l-icon">
-                            <span class="fa fa-map-marker" aria-hidden="true"></span>
-                        </div>
-                        <p>
-                            32 Marshall Drive, Mount Edgecomb, Durban, 4302
-                        </p>
-                        <div class="clearfix"></div>
+                    <div class="col-md-3 col-xs-6 w3_agile_footer_grid">
+                        <h3>Navigation</h3>
+                        <ul class="agileits_w3layouts_footer_grid_list">
+                            <li>
+                                <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                <a @Html.ActionLink("Home", "Index", "Home") </a>
+                            </li>
+                            <li>
+                                <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                <a @Html.ActionLink("Booking", "Create", "Bookings") </a>
+                            </li>
+                            <li>
+                                <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                <a @Html.ActionLink("Tracking", "Create", "Trackings") </a>
+                            </li>
+                            <li>
+                                <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                <a @Html.ActionLink("Orders", "Index", "Home") <b></a></b><br>
+                                <a @Html.ActionLink("-Get Quote", "Create", "Quotes") </a><br>
+                                <a @Html.ActionLink("-Manage Orders", "Create", "Orders") </a>
+                            </li>
+                            <li>
+                                <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                <a @Html.ActionLink("Contact Us", "Contact", "Home") </a>
+                            </li>
+                            <li>
+                                <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                <a @Html.ActionLink("Profile", "Index", "Home") <b></a></b><br>
+                                <a @Html.ActionLink("-Login", "Login", "Account") </a><br>
+                                <a @Html.ActionLink("-Register", "Register", "Account") </a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="w3ls_footer_grid_left">
-                        <div class="w3l-icon">
-                            <span class="fa fa-phone" aria-hidden="true"></span>
+                    <div class="col-md-3 col-xs-6 w3ls_address_mail_footer_grids w3_agile_footer_grid">
+                        <h3>Contact Us</h3>
+                        <div class="w3ls_footer_grid_left">
+                            <div class="w3l-icon">
+                                <span class="fa fa-map-marker" aria-hidden="true"></span>
+                            </div>
+                            <p>
+                                32 Marshall Drive, Mount Edgecomb, Durban, 4302
+                            </p>
+                            <div class="clearfix"></div>
                         </div>
-                        <p>
-                            +031 566 1604
-                        </p>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="w3ls_footer_grid_left">
-                        <div class="w3l-icon">
-                            <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                        <div class="w3ls_footer_grid_left">
+                            <div class="w3l-icon">
+                                <span class="fa fa-phone" aria-hidden="true"></span>
+                            </div>
+                            <p>
+                                +031 566 1604
+                            </p>
+                            <div class="clearfix"></div>
                         </div>
-                        <p>
-                            <a href="mailto:info@messengerking.co.za">info@messengerking.co.za</a>
-                        </p>
-                        <div class="clearfix"></div>
+                        <div class="w3ls_footer_grid_left">
+                            <div class="w3l-icon">
+                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                            </div>
+                            <p>
+                                <a href="mailto:info@messengerking.co.za">info@messengerking.co.za</a>
+                            </p>
+                            <div class="clearfix"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="clearfix"> </div>
-            </div>
-            <div class="agileinfo_copyright">
-                <p>
-                    © 2020 Messenger King. All Rights Reserved | Design by CodeShedding Inc.</a>
-                </p>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="agileinfo_copyright">
+                    <p>
+                        © 2020 Messenger King. All Rights Reserved | Design by CodeShedding Inc.</a>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- //footer -->
-    <!-- Supportive js -->
-    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/jquery-2.1.4.min.js"></script>
-    <!-- //Supportive js -->
-    <!-- banner bottom video script -->
-    <script src="~/LayOuts/FullSite Files/js/simplePlayer.js"></script>
-    <script>
-				$("document").ready(function() {
-					$("#video").simplePlayer();
-				});
-    </script>
-    <!-- //banner bottom video script -->
-    <!-- testimonials plugin script -->
-    <script src="~/LayOuts/FullSite Files/js/jquery.wmuSlider.js"></script>
-    <script>
-		$('.example1').wmuSlider();
-    </script>
-    <!-- testimonials plugin script -->
-    <!-- smooth scrolling js -->
-    <script src="~/LayOuts/FullSite Files/js/SmoothScroll.min.js"></script>
-    <!-- smooth scrolling js -->
-    <!-- start-smooth-scrolling -->
-    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/move-top.js"></script>
-    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/easing.js"></script>
-    <script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});
-	});
-    </script>
+        <!-- //footer -->
+        <!-- Supportive js -->
+        <script type="text/javascript" src="~/LayOuts/FullSite Files/js/jquery-2.1.4.min.js"></script>
+        <!-- //Supportive js -->
+        <!-- banner bottom video script -->
+        <script src="~/LayOuts/FullSite Files/js/simplePlayer.js"></script>
+        <script>
+            $("document").ready(function () {
+                $("#video").simplePlayer();
+            });
+        </script>
+        <!-- //banner bottom video script -->
+        <!-- testimonials plugin script -->
+        <script src="~/LayOuts/FullSite Files/js/jquery.wmuSlider.js"></script>
+        <script>
+            $('.example1').wmuSlider();
+        </script>
+        <!-- testimonials plugin script -->
+        <!-- smooth scrolling js -->
+        <script src="~/LayOuts/FullSite Files/js/SmoothScroll.min.js"></script>
+        <!-- smooth scrolling js -->
+        <!-- start-smooth-scrolling -->
+        <script type="text/javascript" src="~/LayOuts/FullSite Files/js/move-top.js"></script>
+        <script type="text/javascript" src="~/LayOuts/FullSite Files/js/easing.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function ($) {
+                $(".scroll").click(function (event) {
+                    event.preventDefault();
+                    $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+                });
+            });
+        </script>
 
-    <!-- here starts scrolling icon -->
-    <script type="text/javascript">
-		$(document).ready(function() {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear'
-				};
-			*/
+        <!-- here starts scrolling icon -->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                /*
+                    var defaults = {
+                    containerID: 'toTop', // fading element id
+                    containerHoverID: 'toTopHover', // fading element hover id
+                    scrollSpeed: 1200,
+                    easingType: 'linear'
+                    };
+                */
 
-			$().UItoTop({ easingType: 'easeOutQuart' });
+                $().UItoTop({ easingType: 'easeOutQuart' });
 
-			});
-    </script>
-    <!-- //here ends scrolling icon -->
-    <!-- move to top-js-files -->
-    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/move-top.js"></script>
-    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/easing.js"></script>
-    <!-- //move to top-js-files -->
+            });
+        </script>
+        <!-- //here ends scrolling icon -->
+        <!-- move to top-js-files -->
+        <script type="text/javascript" src="~/LayOuts/FullSite Files/js/move-top.js"></script>
+        <script type="text/javascript" src="~/LayOuts/FullSite Files/js/easing.js"></script>
+        <!-- //move to top-js-files -->
 
-    <script type="text/javascript" src="~/LayOuts/FullSite Files/js/bootstrap.js"></script><!-- bootstrap js file -->
+        <script type="text/javascript" src="~/LayOuts/FullSite Files/js/bootstrap.js"></script><!-- bootstrap js file -->
 
 </body>
 </html>

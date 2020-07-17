@@ -26,6 +26,103 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
     <!--//fonts-->
 
+    <link href="//fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet">
+    <!-- /fonts -->
+    <!-- css -->
+    <link href="~/LayOuts/RegSite Files/css/bootstrap.css" rel="stylesheet" type='text/css' media="all" />
+    <link href="~/LayOuts/RegSite Files/css/style.css" rel="stylesheet" type='text/css' media="all" />
+    <!-- /css -->
+
+    <style>
+
+        .myForm {
+    background-color: #cacaca;
+    padding: 10px;
+}
+
+        .myForm {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            font-size: 0.8em;
+            width: 40em;
+            padding: 1em;
+            border: 1px solid #ccc;
+        }
+
+            .myForm * {
+                box-sizing: border-box;
+            }
+
+            .myForm fieldset {
+                border: none;
+                padding: 0;
+            }
+
+            .myForm legend,
+            .myForm label {
+                padding: 0;
+                font-weight: bold;
+            }
+
+                .myForm label.choice {
+                    font-size: 0.9em;
+                    font-weight: normal;
+                }
+
+            .myForm label {
+                text-align: left;
+                display: block;
+            }
+
+            .myForm input[type="text"],
+            .myForm input[type="tel"],
+            .myForm input[type="email"],
+            .myForm input[type="datetime-local"],
+            .myForm select,
+            .myForm textarea {
+                float: right;
+                width: 60%;
+                border: 1px solid #ccc;
+                font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+                font-size: 0.9em;
+                padding: 0.3em;
+            }
+
+            .myForm textarea {
+                height: 100px;
+            }
+
+            .myForm input[type="radio"],
+            .myForm input[type="checkbox"] {
+                margin-left: 40%;
+            }
+
+            .myForm button {
+                padding: 1em;
+                border-radius: 0.5em;
+                background: #eee;
+                border: none;
+                font-weight: bold;
+                margin-left: 40%;
+                margin-top: 1.8em;
+            }
+
+                .myForm button:hover {
+                    background: #ccc;
+                    cursor: pointer;
+                }
+
+                .txtbox {
+display: block;
+width: 70%;
+border: 1px solid #ccc;
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size: 0.9em;
+padding: 0.3em;
+margin: 0 auto;
+  position: relative
+}
+    </style>
+
 </head>
 <body>
 
@@ -80,60 +177,58 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     <!-- //header -->
 
-    <h2>Create</h2>
+    <center>
+        <h3 class="heading" style="color:white">Tracking</h3>
+    </center>
 
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-horizontal">
-            <h4>Tracking</h4>
+    <div class="content-agileits">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.Track_ID, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Track_ID, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Track_ID, "", new { @class = "text-danger" })
-                </div>
+            <div class="form-group w3layouts w3 w3l">
+                <label for="firstname" class="control-label">Tracking ID : </label>
+                @Html.EditorFor(model => model.Track_ID, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Tracking ID" } })
+                @Html.ValidationMessageFor(model => model.Track_ID, "", new { @class = "text-danger" })
+                <div class="help-block with-errors"></div>
             </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Track_Message, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Track_Message, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Track_Message, "", new { @class = "text-danger" })
-                </div>
+            <div class="form-group w3layouts w3 w3l">
+                <label for="firstname" class="control-label">Track Message : </label>
+                @Html.EditorFor(model => model.Track_Message, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Track Message" } })
+                @Html.ValidationMessageFor(model => model.Track_Message, "", new { @class = "text-danger" })
+                <div class="help-block with-errors"></div>
             </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Order_ID, "Order_ID", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("Order_ID", null, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.Order_ID, "", new { @class = "text-danger" })
-                </div>
+            <div class="form-group w3layouts w3 w3l">
+                <label for="firstname" class="control-label">Order_ID : </label>
+                @Html.DropDownList("Order_ID", null, htmlAttributes: new { @class = "form-control", @placeholder = "Select Order_ID" })
+                @Html.ValidationMessageFor(model => model.Order_ID, "", new { @class = "text-danger" })
+                <div class="help-block with-errors"></div>
             </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.TrackingCat_ID, "TrackingCat_ID", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("TrackingCat_ID", null, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.TrackingCat_ID, "", new { @class = "text-danger" })
-                </div>
+            <div class="form-group w3layouts w3 w3l">
+                <label for="firstname" class="control-label">Tracking Category : </label>
+                @Html.DropDownList("TrackingCat_ID", null, htmlAttributes: new { @class = "form-control", @placeholder = "Select Tracking Category" })
+                @Html.ValidationMessageFor(model => model.TrackingCat_ID, "", new { @class = "text-danger" })
+                <div class="help-block with-errors"></div>
             </div>
 
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
+            <center>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
                 </div>
-            </div>
-        </div>
-    }
+            </center>
+            <center>
+                <a href='@Url.Action("Index", "Trackings")' class="btn btn-primary">Back to List</a>|
+            </center>
 
-    <div>
-        @Html.ActionLink("Back to List", "Index")
+        }
     </div>
+   
 
     <!-- footer -->
     <div class="footer">
@@ -229,15 +324,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- banner bottom video script -->
     <script src="~/LayOuts/FullSite Files/js/simplePlayer.js"></script>
     <script>
-				$("document").ready(function() {
-					$("#video").simplePlayer();
-				});
+        $("document").ready(function () {
+            $("#video").simplePlayer();
+        });
     </script>
     <!-- //banner bottom video script -->
     <!-- testimonials plugin script -->
     <script src="~/LayOuts/FullSite Files/js/jquery.wmuSlider.js"></script>
     <script>
-		$('.example1').wmuSlider();
+        $('.example1').wmuSlider();
     </script>
     <!-- testimonials plugin script -->
     <!-- smooth scrolling js -->
@@ -247,29 +342,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="text/javascript" src="~/LayOuts/FullSite Files/js/move-top.js"></script>
     <script type="text/javascript" src="~/LayOuts/FullSite Files/js/easing.js"></script>
     <script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});
-	});
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
     </script>
 
     <!-- here starts scrolling icon -->
     <script type="text/javascript">
-		$(document).ready(function() {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear'
-				};
-			*/
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+            */
 
-			$().UItoTop({ easingType: 'easeOutQuart' });
+            $().UItoTop({ easingType: 'easeOutQuart' });
 
-			});
+        });
     </script>
     <!-- //here ends scrolling icon -->
     <!-- move to top-js-files -->

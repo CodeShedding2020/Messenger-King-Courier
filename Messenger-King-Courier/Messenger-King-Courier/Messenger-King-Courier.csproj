@@ -495,7 +495,6 @@
     <Content Include="Views\ClientCategories\Details.cshtml" />
     <Content Include="Views\ClientCategories\Edit.cshtml" />
     <Content Include="Views\ClientCategories\Index.cshtml" />
-    <Content Include="Views\Banks\Create.cshtml" />
     <Content Include="Views\Banks\Delete.cshtml" />
     <Content Include="Views\Banks\Details.cshtml" />
     <Content Include="Views\Banks\Edit.cshtml" />
@@ -556,6 +555,7 @@
     <Content Include="Views\Roles\RemoveFromRole.cshtml" />
     <Content Include="Views\Roles\RolesForThisUser.cshtml" />
     <Content Include="Views\Roles\UsersInRole.cshtml" />
+    <Content Include="Views\Banks\Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

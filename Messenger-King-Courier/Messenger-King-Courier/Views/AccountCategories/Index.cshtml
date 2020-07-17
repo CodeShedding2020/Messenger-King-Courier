@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Messenger King - Register</title>
+    <title>Messenger King - Account Categories</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Bakery In Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -25,6 +25,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
     <!--//fonts-->
+
+    <link href="//fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet">
+    <!-- /fonts -->
+    <!-- css -->
+    <link href="~/LayOuts/RegSite Files/css/bootstrap.css" rel="stylesheet" type='text/css' media="all" />
+    <link href="~/LayOuts/RegSite Files/css/style.css" rel="stylesheet" type='text/css' media="all" />
+    <!-- /css -->
 
 </head>
 <body>
@@ -79,14 +86,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //header -->
-
-    <h2>Index</h2>
+    <center>
+        <h3 class="heading" style="color:white">Account Category</h3>
+    </center>
 
     <p>
-        @Html.ActionLink("Create New", "Create")
+        <a href='@Url.Action("Create", "AccountCategories")' class="btn btn-primary">Create</a>
     </p>
     <table class="table">
-        <tr>
+        <tr class="active">
             <th>
                 @Html.DisplayNameFor(model => model.Account_Type)
             </th>
@@ -95,14 +103,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         @foreach (var item in Model)
         {
-            <tr>
+            <tr class="info">
                 <td>
                     @Html.DisplayFor(modelItem => item.Account_Type)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.AccountCat_ID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.AccountCat_ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.AccountCat_ID })
+                    <a href='@Url.Action("Edit", "AccountCategories", new { id = item.AccountCat_ID })' class="btn btn-success">Edit</a>|
+                    <a href='@Url.Action("Details", "AccountCategories", new { id = item.AccountCat_ID })' class="btn btn-primary">Details</a>|
+                    <a href='@Url.Action("Delete", "AccountCategories", new { id = item.AccountCat_ID })' class="btn btn-warning">Delete</a>|
                 </td>
             </tr>
         }

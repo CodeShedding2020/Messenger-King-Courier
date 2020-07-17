@@ -26,6 +26,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
     <!--//fonts-->
 
+    <link href="//fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet">
+    <!-- /fonts -->
+    <!-- css -->
+    <link href="~/LayOuts/RegSite Files/css/bootstrap.css" rel="stylesheet" type='text/css' media="all" />
+    <link href="~/LayOuts/RegSite Files/css/style.css" rel="stylesheet" type='text/css' media="all" />
+    <!-- /css -->
+
 </head>
 <body>
 
@@ -79,64 +86,58 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //header -->
-    <h2>Delete</h2>
-
-    <h3>Are you sure you want to delete this?</h3>
+    <center>
+        <h3 class="heading" style="color:white">Documents</h3>
+    </center>
+    <center>
+        <h3 class="heading" style="color:white">Are you sure you want to delete this?</h3>
+    </center>
     <div>
-        <h4>Document</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
+    <table class="table">
+        <tr class="active">
+            <th>
                 @Html.DisplayNameFor(model => model.Client.Client_IDNo)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Client.Client_IDNo)
-            </dd>
-
-            <dt>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Driver.Driver_Name)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Driver.Driver_Name)
-            </dd>
-
-            <dt>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Document_ID)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Document_ID)
-            </dd>
-
-            <dt>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Document_Residence)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Document_Residence)
-            </dd>
-
-            <dt>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Document_Statement)
-            </dt>
+            </th>
 
-            <dd>
+        </tr>
+        <tr class="info">
+            <td>
+                @Html.DisplayFor(model => model.Client.Client_IDNo)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Driver.Driver_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Document_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Document_Residence)
+            </td>
+            <td>
                 @Html.DisplayFor(model => model.Document_Statement)
-            </dd>
-
-        </dl>
-
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-
-            <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
-            </div>
-        }
+            </td>
+        </tr>
+    </table>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-primary" /> |
+            <a href='@Url.Action("Index", "Documents")' class="btn btn-success">Back to List</a>|
+        </div>
+    }
     </div>
 
     <!-- footer -->
@@ -233,15 +234,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- banner bottom video script -->
     <script src="~/LayOuts/FullSite Files/js/simplePlayer.js"></script>
     <script>
-				$("document").ready(function() {
-					$("#video").simplePlayer();
-				});
+        $("document").ready(function () {
+            $("#video").simplePlayer();
+        });
     </script>
     <!-- //banner bottom video script -->
     <!-- testimonials plugin script -->
     <script src="~/LayOuts/FullSite Files/js/jquery.wmuSlider.js"></script>
     <script>
-		$('.example1').wmuSlider();
+        $('.example1').wmuSlider();
     </script>
     <!-- testimonials plugin script -->
     <!-- smooth scrolling js -->
@@ -251,29 +252,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="text/javascript" src="~/LayOuts/FullSite Files/js/move-top.js"></script>
     <script type="text/javascript" src="~/LayOuts/FullSite Files/js/easing.js"></script>
     <script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});
-	});
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
     </script>
 
     <!-- here starts scrolling icon -->
     <script type="text/javascript">
-		$(document).ready(function() {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear'
-				};
-			*/
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+            */
 
-			$().UItoTop({ easingType: 'easeOutQuart' });
+            $().UItoTop({ easingType: 'easeOutQuart' });
 
-			});
+        });
     </script>
     <!-- //here ends scrolling icon -->
     <!-- move to top-js-files -->

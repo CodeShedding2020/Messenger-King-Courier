@@ -26,6 +26,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
     <!--//fonts-->
 
+    <link href="//fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet">
+    <!-- /fonts -->
+    <!-- css -->
+    <link href="~/LayOuts/RegSite Files/css/bootstrap.css" rel="stylesheet" type='text/css' media="all" />
+    <link href="~/LayOuts/RegSite Files/css/style.css" rel="stylesheet" type='text/css' media="all" />
+    <!-- /css -->
+
 </head>
 <body>
 
@@ -80,74 +87,73 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     <!-- //header -->
 
-    <h2>Details</h2>
-
+    <center>
+        <h3 class="heading" style="color:white">Banking Details</h3>
+        <h3 class="heading" style="color:white">Details: </h3>
+    </center>
+    <hr />
     <div>
-        <h4>Bank</h4>
         <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.AccountCategory.Account_Type)
-            </dt>
+        <table class="table">
+            <tr class="active">
+                <th>
+                    @Html.DisplayNameFor(model => model.AccountCategory.Account_Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BankCategory.Bank_Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Client.Client_IDNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Driver.Driver_Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bank_Account_Holder)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bank_Account_Number)
+                </th>
+                <dth>
+                    @Html.DisplayNameFor(model => model.Debit_Date)
+                </dth>
 
-            <dd>
-                @Html.DisplayFor(model => model.AccountCategory.Account_Type)
-            </dd>
+            </tr>
+            <tr class="info">
+                <td>
+                    @Html.DisplayFor(model => model.AccountCategory.Account_Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.BankCategory.Bank_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Client.Client_IDNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Driver.Driver_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Bank_Account_Holder)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Bank_Account_Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Debit_Date)
+                </td>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.BankCategory.Bank_Name)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.BankCategory.Bank_Name)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Client.Client_IDNo)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Client.Client_IDNo)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Driver.Driver_Name)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Driver.Driver_Name)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Bank_Account_Holder)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Bank_Account_Holder)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Bank_Account_Number)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Bank_Account_Number)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Debit_Date)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Debit_Date)
-            </dd>
-
-        </dl>
+            </tr>
+        </table>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-primary" /> |
+        <a href='@Url.Action("Edit", "Banks", new { id = Model.Bank_ID })' class="btn btn-success">Edit</a>|
+        <a href='@Url.Action("Index", "Banks")' class="btn btn-success">Back to List</a>|
     </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Bank_ID }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+        }
+    </div>
 
     <!-- footer -->
     <div class="footer">
@@ -243,15 +249,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- banner bottom video script -->
     <script src="~/LayOuts/FullSite Files/js/simplePlayer.js"></script>
     <script>
-				$("document").ready(function() {
-					$("#video").simplePlayer();
-				});
+        $("document").ready(function () {
+            $("#video").simplePlayer();
+        });
     </script>
     <!-- //banner bottom video script -->
     <!-- testimonials plugin script -->
     <script src="~/LayOuts/FullSite Files/js/jquery.wmuSlider.js"></script>
     <script>
-		$('.example1').wmuSlider();
+        $('.example1').wmuSlider();
     </script>
     <!-- testimonials plugin script -->
     <!-- smooth scrolling js -->
@@ -261,29 +267,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="text/javascript" src="~/LayOuts/FullSite Files/js/move-top.js"></script>
     <script type="text/javascript" src="~/LayOuts/FullSite Files/js/easing.js"></script>
     <script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});
-	});
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
     </script>
 
     <!-- here starts scrolling icon -->
     <script type="text/javascript">
-		$(document).ready(function() {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear'
-				};
-			*/
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+            */
 
-			$().UItoTop({ easingType: 'easeOutQuart' });
+            $().UItoTop({ easingType: 'easeOutQuart' });
 
-			});
+        });
     </script>
     <!-- //here ends scrolling icon -->
     <!-- move to top-js-files -->

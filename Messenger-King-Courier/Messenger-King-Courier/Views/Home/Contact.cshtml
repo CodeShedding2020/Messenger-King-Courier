@@ -54,7 +54,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <nav>
                             <ul class="nav navbar-nav">
-                                <li><a class="active" @Html.ActionLink("Home", "Index", "Home") </a></li>
+                                <li><a  @Html.ActionLink("Home", "Index", "Home") </a></li>
                                 <li><a @Html.ActionLink("Booking", "Create", "Bookings") </a></li>
                                 <li><a @Html.ActionLink("Tracking", "Create", "Trackings") </a></li>
                                 <li class="dropdown">
@@ -65,11 +65,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <li><a @Html.ActionLink("Manage Orders", "Create", "Orders") </a></li>
                                     </ul>
                                 </li>
-                                <li><a @Html.ActionLink("Contact Us", "Contact", "Home") </a></li>
+                                <li><a class="active" @Html.ActionLink("Contact Us", "Contact", "Home") </a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a @Html.Partial("_LoginPartial") </a></li>
+                                        <li><a  @Html.ActionLink("Login", "Login", "Account")</a></li>
                                         <li class="divider"></li>
                                         <li><a @Html.ActionLink("Register", "Register", "Account") </a></li>
                                     </ul>

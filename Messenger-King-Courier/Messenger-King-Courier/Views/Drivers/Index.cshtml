@@ -26,6 +26,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
     <!--//fonts-->
 
+    <link href="//fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet">
+    <!-- /fonts -->
+    <!-- css -->
+    <link href="~/LayOuts/RegSite Files/css/bootstrap.css" rel="stylesheet" type='text/css' media="all" />
+    <link href="~/LayOuts/RegSite Files/css/style.css" rel="stylesheet" type='text/css' media="all" />
+    <!-- /css -->
+
 </head>
 <body>
 
@@ -79,13 +86,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //header -->
-    <h2>Index</h2>
+    <center>
+        <h3 class="heading" style="color:white">Drivers</h3>
+    </center>
 
     <p>
-        @Html.ActionLink("Create New", "Create")
+        <a href='@Url.Action("Create", "Drivers")' class="btn btn-primary">Create</a>
     </p>
     <table class="table">
-        <tr>
+        <tr class="active">
             <th>
                 @Html.DisplayNameFor(model => model.Driver_Name)
             </th>
@@ -106,28 +115,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Driver_Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Driver_Surname)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Driver_CellNo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Driver_Address)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Driver_Email)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Driver_IDNo }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Driver_IDNo }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Driver_IDNo })
-                </td>
-            </tr>
+    <tr class="info">
+        <td>
+            @Html.DisplayFor(modelItem => item.Driver_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Driver_Surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Driver_CellNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Driver_Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Driver_Email)
+        </td>
+        <td>
+            <a href='@Url.Action("Edit", "Drivers", new { id = item.Driver_IDNo })' class="btn btn-success">Edit</a>|
+            <a href='@Url.Action("Details", "Drivers", new { id = item.Driver_IDNo})' class="btn btn-primary">Details</a>|
+            <a href='@Url.Action("Delete", "Drivers", new { id = item.Driver_IDNo})' class="btn btn-warning">Delete</a>|
+        </td>
+    </tr>
         }
 
     </table>
@@ -226,15 +235,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- banner bottom video script -->
     <script src="~/LayOuts/FullSite Files/js/simplePlayer.js"></script>
     <script>
-				$("document").ready(function() {
-					$("#video").simplePlayer();
-				});
+        $("document").ready(function () {
+            $("#video").simplePlayer();
+        });
     </script>
     <!-- //banner bottom video script -->
     <!-- testimonials plugin script -->
     <script src="~/LayOuts/FullSite Files/js/jquery.wmuSlider.js"></script>
     <script>
-		$('.example1').wmuSlider();
+        $('.example1').wmuSlider();
     </script>
     <!-- testimonials plugin script -->
     <!-- smooth scrolling js -->
@@ -244,29 +253,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="text/javascript" src="~/LayOuts/FullSite Files/js/move-top.js"></script>
     <script type="text/javascript" src="~/LayOuts/FullSite Files/js/easing.js"></script>
     <script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});
-	});
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
     </script>
 
     <!-- here starts scrolling icon -->
     <script type="text/javascript">
-		$(document).ready(function() {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear'
-				};
-			*/
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+            */
 
-			$().UItoTop({ easingType: 'easeOutQuart' });
+            $().UItoTop({ easingType: 'easeOutQuart' });
 
-			});
+        });
     </script>
     <!-- //here ends scrolling icon -->
     <!-- move to top-js-files -->

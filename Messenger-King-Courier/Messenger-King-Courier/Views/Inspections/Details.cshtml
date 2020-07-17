@@ -26,6 +26,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
     <!--//fonts-->
 
+    <link href="//fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet">
+    <!-- /fonts -->
+    <!-- css -->
+    <link href="~/LayOuts/RegSite Files/css/bootstrap.css" rel="stylesheet" type='text/css' media="all" />
+    <link href="~/LayOuts/RegSite Files/css/style.css" rel="stylesheet" type='text/css' media="all" />
+    <!-- /css -->
+
 </head>
 <body>
 
@@ -79,50 +86,48 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //header -->
-    <h2>Details</h2>
+    <center>
+        <h3 class="heading" style="color:white">Account Category</h3>
+        <h3 class="heading" style="color:white">Details</h3>
+    </center>
 
-    <div>
-        <h4>Inspection</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
+    <table class="table">
+        <tr class="active">
+            <th>
                 @Html.DisplayNameFor(model => model.InspectionCategory.InspectCat_Status)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.InspectionCategory.InspectCat_Status)
-            </dd>
-
-            <dt>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Vehicle.Vehicle_Make)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Vehicle.Vehicle_Make)
-            </dd>
-
-            <dt>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Condition)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Condition)
-            </dd>
-
-            <dt>
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Inspection_Date)
-            </dt>
+            </th>
+            <th></th>
+        </tr>
 
-            <dd>
+        <tr class="info">
+            <td>
+                @Html.DisplayFor(model => model.InspectionCategory.InspectCat_Status)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Vehicle.Vehicle_Make)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Condition)
+            </td>
+            <td>
                 @Html.DisplayFor(model => model.Inspection_Date)
-            </dd>
+            </td>
 
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Inspection_ID }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+            <td>
+                <a href='@Url.Action("Edit", "Inspections", new { id = Model.Inspection_ID })' class="btn btn-success">Edit</a>|
+                <a href='@Url.Action("Index", "Inspections")' class="btn btn-success">Back to List</a>|
+            </td>
+        </tr>
+    </table>
 
     <!-- footer -->
     <div class="footer">
@@ -218,15 +223,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- banner bottom video script -->
     <script src="~/LayOuts/FullSite Files/js/simplePlayer.js"></script>
     <script>
-				$("document").ready(function() {
-					$("#video").simplePlayer();
-				});
+        $("document").ready(function () {
+            $("#video").simplePlayer();
+        });
     </script>
     <!-- //banner bottom video script -->
     <!-- testimonials plugin script -->
     <script src="~/LayOuts/FullSite Files/js/jquery.wmuSlider.js"></script>
     <script>
-		$('.example1').wmuSlider();
+        $('.example1').wmuSlider();
     </script>
     <!-- testimonials plugin script -->
     <!-- smooth scrolling js -->
@@ -236,29 +241,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="text/javascript" src="~/LayOuts/FullSite Files/js/move-top.js"></script>
     <script type="text/javascript" src="~/LayOuts/FullSite Files/js/easing.js"></script>
     <script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});
-	});
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
     </script>
 
     <!-- here starts scrolling icon -->
     <script type="text/javascript">
-		$(document).ready(function() {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear'
-				};
-			*/
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+            */
 
-			$().UItoTop({ easingType: 'easeOutQuart' });
+            $().UItoTop({ easingType: 'easeOutQuart' });
 
-			});
+        });
     </script>
     <!-- //here ends scrolling icon -->
     <!-- move to top-js-files -->
