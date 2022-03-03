@@ -18,11 +18,15 @@
         <div class="form-group">
             @Html.LabelFor(model => model.InspectCat_Status, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.InspectCat_Status, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.InspectCat_Status, new List<SelectListItem>
+           {
+                new SelectListItem {Text="Pending",Value="Pending" },
+               new SelectListItem {Text="Not ready for transporting",Value="Not ready for transporting" },
+                new SelectListItem {Text="Ready for transporting",Value="Ready for transporting" }
+           })
                 @Html.ValidationMessageFor(model => model.InspectCat_Status, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />

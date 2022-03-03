@@ -84,17 +84,22 @@ namespace Messenger_King_Courier.Controllers
         {
             if (ModelState.IsValid)
             {
-                AccountingLogic accountingLogic = new AccountingLogic();
+                Client client = new Client();
+                if (client.ClientCategory.ClientCat_Type != null)
+                {
+                    AccountingLogic accountingLogic = new AccountingLogic();
 
-                var uid = User.Identity.GetUserId();
-                quote.Client_ID = uid;
-                quote.Quote_Date = System.DateTime.Now;
-                quote.Quote_Distance = 00.00f;///Reserved for google  maps API
-                quote.Quote_Cost = accountingLogic.GetQouteCost(quote.Quote_Distance, quote.Item_Quantity, quote.Quote_length, quote.Quote_Height, quote.Quote_Width, quote.Quote_Weight);
-                db.Quotes.Add(quote);
-                db.SaveChanges();
+                    var uid = User.Identity.GetUserId();
+                    quote.Client_ID = uid;
+                    quote.Rate_ID = accountingLogic.GetQuoteId(quote.Client_ID);
+                    quote.Quote_Date = System.DateTime.Now;
+                    quote.Quote_Distance = 00.00f;///Reserved for google  maps API
+                    quote.Quote_Cost = accountingLogic.GetQouteCost(quote.Quote_Distance, quote.Item_Quantity, quote.Quote_length, quote.Quote_Height, quote.Quote_Width, quote.Quote_Weight, quote.Rate_ID);
+                    db.Quotes.Add(quote);
+                    db.SaveChanges();
 
-                return RedirectToAction("Details", "Quotes", new { id=quote.Quote_ID});
+                    return RedirectToAction("Details", "Quotes", new { id = quote.Quote_ID });
+                }
             }
 
 

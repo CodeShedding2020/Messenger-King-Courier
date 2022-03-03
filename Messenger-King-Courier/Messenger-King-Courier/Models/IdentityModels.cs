@@ -45,10 +45,16 @@ namespace Messenger_King_Courier.Models
         public DbSet<Tracking> Trackings { get; set; }
         public DbSet<TrackingCategory> TrackingCategories { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
+       public DbSet<Messenger_King_Courier.ViewModels.InspectedVehicles> inspectedVehicles { get; set; }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+        //Role Management
+        public DbSet<IdentityUserRole> UserInRole { get; set; }
+        // public DbSet<ApplicationUser> appUsers { get; set; }
+        public DbSet<ApplicationRole> appRoles { get; set; }
     }
 }
