@@ -35,34 +35,7 @@ namespace Messenger_King_Courier.Controllers
                 return HttpNotFound();
             }
             return View(document);
-        }
-
-        // GET: Documents/Create
-        public ActionResult Create()
-        {
-            ViewBag.Client_ID = new SelectList(db.Clients, "Client_ID", "Client_IDNo");
-            ViewBag.Driver_IDNo = new SelectList(db.Drivers, "Driver_IDNo", "Driver_Name");
-            return View();
-        }
-
-        // POST: Documents/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Documents_ID,Document_ID,Document_Residence,Document_Statement,Client_ID,Driver_IDNo")] Document document)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Documents.Add(document);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.Client_ID = new SelectList(db.Clients, "Client_ID", "Client_IDNo", document.Client_ID);
-            ViewBag.Driver_IDNo = new SelectList(db.Drivers, "Driver_IDNo", "Driver_Name", document.Driver_IDNo);
-            return View(document);
-        }
+        }   
 
         // GET: Documents/Edit/5
         public ActionResult Edit(int? id)
